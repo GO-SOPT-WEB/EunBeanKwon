@@ -1,0 +1,122 @@
+@import "reset.css";
+
+body {
+    padding-top: 4em;
+    font-family: 'Noto Sans KR', sans-serif;
+    background-color: #def2f1;
+}
+
+.header {
+    position:fixed;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: #feffff;
+    background-color: #2b7a78;
+    top: 0;
+    left: 0;
+    right: 0;
+}
+
+.title {
+    margin: 0.5em 1em ;
+    font-weight: 500;
+    font-size: 2em;
+} 
+
+.menuBar {
+    margin-right: 1em;
+    display: inline-block;
+    width: 2em;
+    height: 2em;
+}
+
+.main {
+    display: flex;
+    justify-content: center;
+    padding-top: 1em;
+    /* padding-left: 1em; */
+}
+
+.nav {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    flex-shrink:0;
+    margin-left: 1em;
+    font-size: 15px;
+    height: auto;
+}
+
+ul {
+    width: 10em;
+    background-color: #2b7a78;
+    line-height: 1.8em;
+    padding-bottom: 0.3em;
+    border-radius: 10px;
+}
+
+.nav-title {
+    margin: 0.5em 0.7em;
+    font-weight: 400;
+    color: white;
+    font-size: 1.2em;
+}
+
+.category {
+    margin: 0.5em;
+    padding:  0.2em 0.8em;
+    align-content: stretch;
+    background-color: #feffff;
+    border-radius: 10px;
+    font-weight: 500;
+}
+
+.cardsection {
+    flex-grow: 1;
+    display: flex;
+    flex-flow: wrap;
+
+}
+
+.card {
+    margin-left: 0.8em;
+    margin-bottom: 0.8rem;
+    padding: 1em;
+    background-color: #feffff;
+    border-radius: 20px;
+    box-shadow: 2px 2px #2b7a78;
+    width: 10em;
+    display: flex;
+    flex-direction: column;
+    flex-flow: wrap;
+    justify-content: center;
+}
+
+.bakery-title {
+    margin: 0.5em;
+    font-weight: 600;
+    font-size: 1.3em;
+}
+
+.bakery-tag {
+    padding-bottom: 0.5em;
+    width: 6em;
+    height: auto;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow:ellisis;
+}
+
+
+.bakery-img {
+    object-fit:contain;
+    margin: 2em;
+    max-width: 70%;
+}
+
+/* 오른쪽으로 빼는 방법 구상하기... ㅜ */
+.bakery-like {
+    font-size: 1.5em;
+    left: 0;
+}
