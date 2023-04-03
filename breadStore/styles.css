@@ -9,13 +9,18 @@ body {
 .header {
     position:fixed;
     display: flex;
-    justify-content: space-between;
+    justify-content: space-around;
     align-items: center;
     color: #feffff;
     background-color: #2b7a78;
     top: 0;
     left: 0;
     right: 0;
+}
+
+.header:hover {
+    background-color: #feffff;
+    color: #2b7a78;
 }
 
 .title {
