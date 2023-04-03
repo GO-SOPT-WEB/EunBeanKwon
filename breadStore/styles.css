@@ -7,6 +7,7 @@ body {
 }
 
 .header {
+    height: 8vh;
     position:fixed;
     display: flex;
     justify-content: space-between;
@@ -18,7 +19,44 @@ body {
     right: 0;
 }
 
-.menuBar:hover {
+.menuBar-detail {
+    display: none;
+    color: #17252A;
+    position: absolute;
+    top: 0;
+    right: 0;
+    background-color: #feffff;
+    width: 10vw;
+    height: 100vh;
+    padding: 2rem 1rem;
+}
+
+.menuBar {
+    font-size: 2rem;
+    margin-right: 1rem;
+    /* line-height:6px; */
+    padding-top: 0;
+    margin-top: 0;
+    padding-bottom: 5px;
+}
+
+/* .menuBar-detail */
+.menuBar:hover> .menuBar-detail {
+    display: block;
+}
+
+.detail-list {
+    font-weight: 400;
+    font-size: 1.5rem;
+    padding-bottom: 0.5rem;
+
+}
+
+.detail-title {
+    padding: 0 auto;
+    margin-top: 0.5rem;
+    font-weight: 200;
+    font-size: 1rem;
 
 }
 
@@ -27,13 +65,6 @@ body {
     font-weight: 500;
     font-size: 2rem;
 } 
-
-.menuBar {
-    margin-right: 1rem;
-    display: inline-block;
-    width: 2rem;
-    height: 2rem;
-}
 
 .main {
     display: flex;
