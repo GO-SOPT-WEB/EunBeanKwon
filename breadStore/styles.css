@@ -9,7 +9,7 @@ body {
 .header {
     position:fixed;
     display: flex;
-    justify-content: space-around;
+    justify-content: space-between;
     align-items: center;
     color: #feffff;
     background-color: #2b7a78;
@@ -18,63 +18,63 @@ body {
     right: 0;
 }
 
-.header:hover {
-    background-color: #feffff;
-    color: #2b7a78;
+.menuBar:hover {
+
 }
 
 .title {
-    margin: 0.5em 1em ;
+    margin: 0.5rem 1rem ;
     font-weight: 500;
-    font-size: 2em;
+    font-size: 2rem;
 } 
 
 .menuBar {
-    margin-right: 1em;
+    margin-right: 1rem;
     display: inline-block;
-    width: 2em;
-    height: 2em;
+    width: 2rem;
+    height: 2rem;
 }
 
 .main {
     display: flex;
     justify-content: center;
-    padding-top: 1em;
-    /* padding-left: 1em; */
+    padding-top: 1rem;
 }
 
 .nav {
+    border-radius: 10px;
     display: flex;
     flex-direction: column;
-    align-items: center;
     flex-shrink:0;
-    margin-left: 1em;
+    margin-left: 1rem;
+    padding-bottom: 0.5rem;
     font-size: 15px;
-    height: auto;
+    height: fit-content;
+    background-color: #2b7a78;
 }
 
-ul {
-    width: 10em;
-    background-color: #2b7a78;
-    line-height: 1.8em;
-    padding-bottom: 0.3em;
-    border-radius: 10px;
-}
 
 .nav-title {
-    margin: 0.5em 0.7em;
+    margin: 0.5rem 0.7rem;
     font-weight: 400;
     color: white;
-    font-size: 1.2em;
+    font-size: 1.2rem;
 }
 
+
 .category {
-    margin: 0.5em;
-    padding:  0.2em 0.8em;
+    width: 6rem;
+    margin: 0.3rem 0.5rem;
+    padding:  0.2rem 0.8rem;
     align-content: stretch;
     background-color: #feffff;
     border-radius: 10px;
     font-weight: 500;
+}
+
+.category:hover {
+    color:#def2f1;
+    background-color: #17252A;
 }
 
 .cardsection {
@@ -85,13 +85,13 @@ ul {
 }
 
 .card {
-    margin-left: 0.8em;
+    margin-left: 0.8rem;
     margin-bottom: 0.8rem;
-    padding: 1em;
+    padding: 1rem;
     background-color: #feffff;
     border-radius: 20px;
     box-shadow: 2px 2px #2b7a78;
-    width: 10em;
+    width: 10rem;
     display: flex;
     flex-direction: column;
     flex-flow: wrap;
@@ -99,14 +99,14 @@ ul {
 }
 
 .bakery-title {
-    margin: 0.5em;
+    margin: 0.5rem;
     font-weight: 600;
-    font-size: 1.3em;
+    font-size: 1.3rem;
 }
 
 .bakery-tag {
-    padding-bottom: 0.5em;
-    width: 6em;
+    padding-bottom: 0.5rem;
+    width: 6rem;
     height: auto;
     white-space: nowrap;
     overflow: hidden;
@@ -116,12 +116,12 @@ ul {
 
 .bakery-img {
     object-fit:contain;
-    margin: 2em;
+    margin: 2rem;
     max-width: 70%;
 }
 
 /* 오른쪽으로 빼는 방법 구상하기... ㅜ */
 .bakery-like {
-    font-size: 1.5em;
+    font-size: 1.5rem;
     left: 0;
 }
