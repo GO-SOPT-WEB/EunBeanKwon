@@ -9,119 +9,186 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;300;400;500;700;900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles.css" />
-    <link rel="icon" href="./imgs/BreadA.png" />
+    <link rel="icon" href="./imgs/Bread11.png" />
 
 </head>
 <body>
-    <header class="header">
+    <!-- header -->
+    <header>
         <p class="title">은빈이네 빵집 🥐</p>
-        <div class="menuBar"> ☰
-        <div class="menuBar-detail">
-            <ul class="detail-list"> 메뉴
-                <hr />
-                <li class="detail-title"> 새 상품 추가 </li>
-                <li class="detail-title"> 찜 목록</li>
-            </ul>
-        </div>
+        <div class="c-menu-bar"> ☰
+            <div class="menu-bar__detail">
+                <ul class="menu-bar__list"> 메뉴
+                    <hr />
+                    <li class="menu-bar__list-title"> 새 상품 추가 </li>
+                    <li class="menu-bar__list-title"> 찜 목록</li>
+                </ul>
+            </div>
         </div>  
     </header>
+    <!-- main : except header -->
     <div class="main">
-        <nav class="nav">
-                <p class="nav-title">종류</p>
-                <label class="category">
-                    <input type="checkbox" ><a>전체</a></input>
-                </label>
-
-                <label class="category">
-                    <input type="checkbox"><a href="#">빵</a></input>
-
-                </label>
-                <label class="category">
-                    <input type="checkbox"><a href="#">케이크</a></input>
-                </label>
-                <label class="category">
-                    <input type="checkbox"><a href="#">쿠키</a></input>
-                </label>
+        <nav>
+            <p class="nav__title">종류</p>
+            <label class="nav__category">
+                <input type="checkbox" ><a>전체</a></input>
+            </label>
+            <label class="nav__category">
+                <input type="checkbox"><a href="#">빵</a></input>
+            </label>
+            <label class="nav__category">
+                <input type="checkbox"><a href="#">케이크</a></input>
+            </label>
+            <label class="nav__category">
+                <input type="checkbox"><a href="#">쿠키</a></input>
+            </label>
         </nav>
-        <div class="cardsection">
-            <div class="card">
-                <p class="bakery-title"> 빵 이름 </p>
-                <p class="bakery-tag">#hash #tag #hash #tag #hash #tag #hash #tag#hash #tag #hash #tag #hash #tag #hash #tag </p>
-                    <img class="bakery-img" src="./imgs/BreadA.png"/>
-                    <button class="bakery-like"> ♥ </button>
+        <!-- section : container of cards -->
+        <section>
+            <!-- article : a card * 12 -->
+            <article class="section__card">
+                <p class="section__title"> 네모바게트 </p>
+                <ul class="section__tag">
+                    <li class="section__tag-list">#옆면이 보이는</li>
+                    <li class="section__tag-list">#바게뜨</li>
+                    <li class="section__tag-list">#바게뜨?</li>
+                    <li class="section__tag-list">#바게트?</li>
+                    <li class="section__tag-list">#모르겟다</li>
+                </ul>
+                    <img class="section__img" src="./imgs/Bread1.png"/>
+                    <button class="section__like"> ♥ </button>
                 <!-- ❤️  -->
-            </div>
-            <div class="card">
-                <p class="bakery-title"> 빵 이름 </p>
-                <p class="bakery-tag">#hash #tag</p>
-                    <img class="bakery-img" src="./imgs/BreadA.png"/>
-                    <button class="bakery-like"> ♥ </button>
+            </article>
+            <article class="section__card">
+                <p class="section__title"> 바게트 </p>
+                <ul class="section__tag">
+                    <li class="section__tag-list">#마싯는</li>
+                    <li class="section__tag-list">#바게트</li>
+                    <li class="section__tag-list">#생크림이랑</li>
+                    <li class="section__tag-list">#같이 먹기</li>
+                    <li class="section__tag-list">#마싯겟다</li>
+                </ul>
+                    <img class="section__img" src="./imgs/Bread2.png"/>
+                    <button class="section__like"> ♥ </button>
                 <!-- ❤️  -->
-            </div>
-            <div class="card">
-                <p class="bakery-title"> 빵 이름 </p>
-                <p class="bakery-tag">#hash #tag</p>
-                    <img class="bakery-img" src="./imgs/BreadA.png"/>
-                <button class="bakery-like"> ♡ </button>
+            </article>
+            <article class="section__card">
+                <p class="section__title"> 초코 생크림 케이크 </p>
+                <ul class="section__tag">
+                    <li class="section__tag-list">#장난감같다</li>
+                    <li class="section__tag-list">#한입만</li>
+                    <li class="section__tag-list">#우유랑</li>
+                    <li class="section__tag-list">#커피랑</li>
+                </ul>
+                    <img class="section__img" src="./imgs/Bread3.png"/>
+                    <button class="section__like"> ♥ </button>
                 <!-- ❤️  -->
-            </div>
-            <div class="card">
-                <p class="bakery-title"> 빵 이름 </p>
-                <p class="bakery-tag">#hash #tag</p>
-                    <img class="bakery-img" src="./imgs/BreadA.png"/>
-                <button class="bakery-like"> ♡ </button>
+            </article>
+            <article class="section__card">
+                <p class="section__title"> 레드벨벳 케이크 </p>
+                <ul class="section__tag">
+                    <li class="section__tag-list">#hash</li>
+                    <li class="section__tag-list">#many</li>
+                    <li class="section__tag-list">#hashtag</li>
+                    <li class="section__tag-list">#longtag</li>
+                    <li class="section__tag-list">#tag</li>
+                </ul>
+                    <img class="section__img" src="./imgs/Bread4.png"/>
+                    <button class="section__like"> ♥ </button>
                 <!-- ❤️  -->
-            </div>
-            <div class="card">
-                <p class="bakery-title"> 빵 이름 </p>
-                <p class="bakery-tag">#hash #tag</p>
-                    <img class="bakery-img" src="./imgs/BreadA.png"/>
-                <button class="bakery-like"> ♡ </button>
+            </article>
+            <article class="section__card">
+                <p class="section__title"> 레드벨벳 쿠키  </p>
+                <ul class="section__tag">
+                    <li class="section__tag-list">#hash</li>
+                    <li class="section__tag-list">#many</li>
+                    <li class="section__tag-list">#hashtag</li>
+                    <li class="section__tag-list">#longtag</li>
+                    <li class="section__tag-list">#tag</li>
+                </ul>
+                    <img class="section__img" src="./imgs/Bread5.png"/>
+                    <button class="section__like"> ♥ </button>
                 <!-- ❤️  -->
-            </div>
-            <div class="card">
-                <p class="bakery-title"> 빵 이름 </p>
-                <p class="bakery-tag">#hash #tag</p>
-                    <img class="bakery-img" src="./imgs/BreadA.png"/>
-                <button class="bakery-like"> ♡ </button>
+            </article>
+            <article class="section__card">
+                <p class="section__title"> 초코칩쿠키 </p>
+                <ul class="section__tag">
+                    <li class="section__tag-list">#hash</li>
+                    <li class="section__tag-list">#many</li>
+                    <li class="section__tag-list">#hashtag</li>
+                    <li class="section__tag-list">#longtag</li>
+                    <li class="section__tag-list">#tag</li>
+                </ul>
+                    <img class="section__img" src="./imgs/Bread6.png"/>
+                    <button class="section__like"> ♥ </button>
                 <!-- ❤️  -->
-            </div>
-            <div class="card">
-                <p class="bakery-title"> 빵 이름 </p>
-                <p class="bakery-tag">#hash #tag</p>
-                    <img class="bakery-img" src="./imgs/BreadA.png"/>
-                <button class="bakery-like"> ♡ </button>
+            </article>
+            <article class="section__card">
+                <p class="section__title"> 바게트(묶음) </p>
+                <ul class="section__tag">
+                    <li class="section__tag-list">#hash</li>
+                    <li class="section__tag-list">#many</li>
+                    <li class="section__tag-list">#hashtag</li>
+                    <li class="section__tag-list">#longtag</li>
+                    <li class="section__tag-list">#tag</li>
+                </ul>
+                    <img class="section__img" src="./imgs/Bread7.png"/>
+                    <button class="section__like"> ♥ </button>
                 <!-- ❤️  -->
-            </div>
-            <div class="card">
-                <p class="bakery-title"> 빵 이름 </p>
-                <p class="bakery-tag">#hash #tag</p>
-                    <img class="bakery-img" src="./imgs/BreadA.png"/>
-                <button class="bakery-like"> ♡ </button>
+            </article>
+            <article class="section__card">
+                <p class="section__title"> 딸기케이크  </p>
+                <ul class="section__tag">
+                    <li class="section__tag-list">#hash</li>
+                    <li class="section__tag-list">#many</li>
+                    <li class="section__tag-list">#hashtag</li>
+                    <li class="section__tag-list">#longtag</li>
+                    <li class="section__tag-list">#tag</li>
+                </ul>
+                    <img class="section__img" src="./imgs/Bread8.png"/>
+                    <button class="section__like"> ♥ </button>
                 <!-- ❤️  -->
-            </div>
-            <div class="card">
-                <p class="bakery-title"> 빵 이름 </p>
-                <p class="bakery-tag">#hash #tag</p>
-                    <img class="bakery-img" src="./imgs/BreadA.png"/>
-                <button class="bakery-like"> ♡ </button>
+            </article>
+            <article class="section__card">
+                <p class="section__title"> 로투스 치즈케이크 </p>
+                <ul class="section__tag">
+                    <li class="section__tag-list">#hash</li>
+                    <li class="section__tag-list">#many</li>
+                    <li class="section__tag-list">#hashtag</li>
+                    <li class="section__tag-list">#longtag</li>
+                    <li class="section__tag-list">#tag</li>
+                </ul>
+                    <img class="section__img" src="./imgs/Bread9.png"/>
+                    <button class="section__like"> ♥ </button>
                 <!-- ❤️  -->
-            </div>
-            <div class="card">
-                <p class="bakery-title"> 빵 이름 </p>
-                <p class="bakery-tag">#hash #tag</p>
-                    <img class="bakery-img" src="./imgs/BreadA.png"/>
-                <button class="bakery-like"> ♡ </button>
+            </article>
+            <article class="section__card">
+                <p class="section__title"> 베리치즈케이크  </p>
+                <ul class="section__tag">
+                    <li class="section__tag-list">#hash</li>
+                    <li class="section__tag-list">#many</li>
+                    <li class="section__tag-list">#hashtag</li>
+                    <li class="section__tag-list">#longtag</li>
+                    <li class="section__tag-list">#tag</li>
+                </ul>
+                    <img class="section__img" src="./imgs/Bread10.png"/>
+                    <button class="section__like"> ♥ </button>
                 <!-- ❤️  -->
-            </div>
-            <div class="card">
-                <p class="bakery-title"> 빵 이름 </p>
-                <p class="bakery-tag">#hash #tag</p>
-                    <img class="bakery-img" src="./imgs/BreadA.png"/>
-                <button class="bakery-like"> ♡ </button>
+            </article>
+            <article class="section__card">
+                <p class="section__title"> 식빵 </p>
+                <ul class="section__tag">
+                    <li class="section__tag-list">#hash</li>
+                    <li class="section__tag-list">#many</li>
+                    <li class="section__tag-list">#hashtag</li>
+                    <li class="section__tag-list">#longtag</li>
+                    <li class="section__tag-list">#tag</li>
+                </ul>
+                    <img class="section__img" src="./imgs/Bread11.png"/>
+                    <button class="section__like"> ♥ </button>
                 <!-- ❤️  -->
-            </div>
-        </div>
+            </article>
+         </section>
     </div>
     
 </body>

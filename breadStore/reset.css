@@ -58,3 +58,9 @@ button{
     overflow:visible;
     cursor:pointer; 
 }
+
+/* href 태그 초기화 추가 */
+
+[href] {
+	text-decoration: none;
+}

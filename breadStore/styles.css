@@ -6,7 +6,7 @@ body {
     background-color: #def2f1;
 }
 
-.header {
+header {
     height: 8vh;
     position:fixed;
     display: flex;
@@ -19,7 +19,21 @@ body {
     right: 0;
 }
 
-.menuBar-detail {
+.title {
+    margin: 0.5rem 1rem ;
+    font-weight: 500;
+    font-size: 2rem;
+} 
+
+.c-menu-bar {
+    font-size: 2rem;
+    margin-right: 1rem;
+    padding-top: 0;
+    margin-top: 0;
+    padding-bottom: 5px;
+}
+
+.menu-bar__detail {
     display: none;
     color: #17252A;
     position: absolute;
@@ -31,27 +45,20 @@ body {
     padding: 2rem 1rem;
 }
 
-.menuBar {
-    font-size: 2rem;
-    margin-right: 1rem;
-    padding-top: 0;
-    margin-top: 0;
-    padding-bottom: 5px;
-}
 
 /* .menuBar-detail */
-.menuBar:hover> .menuBar-detail {
+.c-menu-bar:hover> .menu-bar__detail {
     display: block;
 }
 
-.detail-list {
+.menu-bar__list {
     font-weight: 400;
     font-size: 1.5rem;
     padding-bottom: 0.5rem;
 
 }
 
-.detail-title {
+.menu-bar__list-title {
     padding: 0 auto;
     margin-top: 0.5rem;
     font-weight: 200;
@@ -60,11 +67,6 @@ body {
 
 }
 
-.title {
-    margin: 0.5rem 1rem ;
-    font-weight: 500;
-    font-size: 2rem;
-} 
 
 .main {
     display: flex;
@@ -72,7 +74,7 @@ body {
     padding-top: 1rem;
 }
 
-.nav {
+nav {
     border-radius: 10px;
     display: flex;
     flex-direction: column;
@@ -85,7 +87,7 @@ body {
 }
 
 
-.nav-title {
+.nav__title {
     margin: 0.5rem 0.7rem;
     font-weight: 400;
     color: white;
@@ -93,7 +95,7 @@ body {
 }
 
 
-.category {
+.nav__category {
     width: 6rem;
     margin: 0.3rem 0.5rem;
     padding:  0.2rem 0.8rem;
@@ -103,29 +105,29 @@ body {
     font-weight: 500;
 }
 
-.category:hover {
+.nav__category:hover {
     color:#def2f1;
     background-color: #17252A;
     text-decoration: none;
 }
 
-.category [href] {
+.nav__category [href] {
     color: black;
 }
 
-.category:hover [href]{
+.nav__category:hover [href]{
     color:#def2f1;
     background-color: #17252A;
 }
 
-.cardsection {
+section {
     flex-grow: 1;
     display: flex;
     flex-flow: wrap;
 
 }
 
-.card {
+.section__card {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -139,37 +141,40 @@ body {
     height: auto;
 }
 
-.bakery-title {
+.section__title {
     margin: 0.5rem;
     font-weight: 600;
     font-size: 1.3rem;
 }
 
-.bakery-tag {
+.section__tag {
     padding-bottom: 0.5rem;
-    width: 6rem;
+    width: 8rem;
     height: auto;
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
 }
 
-
-.bakery-img {
-    object-fit:contain;
-    margin: 2rem;
-    max-width: 80%;
+.section__tag-list {
+    display: inline-block;
 }
 
-/* 오른쪽으로 빼는 방법 구상하기... ㅜ */
 
-.bakery-like {
+.section__img {
+    object-fit:contain;
+    margin: 1rem;
+    max-width: 80%;
+    height: 10vh
+}
+
+.section__like {
     align-self: flex-end;
     color: black;
     font-size: 2rem;
 }
 
-.bakery-like:hover {
+.section__like:hover {
     color: palevioletred;
 }
 
