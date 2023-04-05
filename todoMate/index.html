@@ -6,28 +6,102 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;300;400;500;700;900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Nanum+Gothic:wght@400;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles.css" />
     <link rel="icon" href="#" />
     <title>Document</title>
 </head>
 <body>
-    <header>
-    </header>
+    <div class="calc-container">
+
+        <header>
+            <p class="header__title">WEB TO DO MATE</p>
+            <hr>
+        </header>
         <main>
-            <section id="calc">
+            <section class="calc">
+                <!-- <div class="calc__week"> -->
+                    <p class="calc__week-title">월</p>
+                    <p class="calc__week-title">화</p>
+                    <p class="calc__week-title">수</p>
+                    <p class="calc__week-title">목</p>
+                    <p class="calc__week-title">금</p>
+                    <p class="calc__week-title">토</p>
+                    <p class="calc__week-title">일</p>
+                <!-- </div> -->
+                <!-- <div class="calc__do-num"> -->
+                    
+                    <p class="calc__do-num-title"> 
+                            <img src="./imgs/white-heaert.jpeg" alt="bgimg_heart" class="calc__do-num-img" />
+                        1
+                    </p>
+                    <p class="calc__do-num-title">
+                        <img src="./imgs/white-heaert.jpeg" alt="bgimg_heart" class="calc__do-num-img" />
+                    1
+                </p>
+                    <p class="calc__do-num-title">
+                            <img src="./imgs/white-heaert.jpeg" alt="bgimg_heart" class="calc__do-num-img" />
+                        1
+                    </p>
+                    <p class="calc__do-num-title">
+                            <img src="./imgs/white-heaert.jpeg" alt="bgimg_heart" class="calc__do-num-img" />
+                        1
+                    </p>
+                    <p class="calc__do-num-title">
+                            <img src="./imgs/white-heaert.jpeg" alt="bgimg_heart" class="calc__do-num-img" />
+                        1
+                    </p>
+                    <p class="calc__do-num-title">
+                            <img src="./imgs/white-heaert.jpeg" alt="bgimg_heart" class="calc__do-num-img" />
+                        1
+                    </p>
+                    <p class="calc__do-num-title">
+                            <img src="./imgs/white-heaert.jpeg" alt="bgimg_heart" class="calc__do-num-img" />
+                        1
+                    </p>
+                <!-- </div> -->
+                <!-- <div class="calc__day-num"> -->
+                    <p class="calc__day-num-title">27</p>
+                    <p class="calc__day-num-title">28</p>
+                    <p class="calc__day-num-title">29</p>
+                    <p class="calc__day-num-title">30</p>
+                    <p class="calc__day-num-title">31</p>
+                    <p class="calc__day-num-title">1</p>
+                    <p class="calc__day-num-title">2</p>
+                <!-- </div> -->
             </section>
-            <section id="to-do">
-                <article>
-                    <ul>
-                        <li class="to-do__list"></li>
-                        <li class="to-do__list"></li>
-                        <li class="to-do__list"></li>
-                    </ul>
-                </article>
+            
+            <section class="to-dos">
+                <div class="to-do-container">
+                    <article>
+                        <p class="to-do__title"> 투두 타이틀 
+                            <button class="to-do__btn"> + </button>
+                        </p>
+                        <hr>
+                        <ul>
+                            <li class="to-do__list">세부할일1</li>
+                            
+                        <hr>
+                            <li class="to-do__list">세부할일2</li>
+                            
+                        <hr>
+                            <li class="to-do__list">세부할일3</li>
+
+                        </ul>
+                    </article>
+                </div>
             </section>
         </main>
-    <footer>
-    </footer>
-</body>
-</html>
+        <footer>
+            <button type="button" class="footer__btn"> 
+                <img class="footer__img" src="imgs/home.png" alt="home" /> 
+                <p>달력</p>
+            </button>
+            <button type="button" class="footer__btn"> 
+                <img class="footer__img" src="imgs/person.png" alt="home" /> 
+                <p>MY</p> 
+            </button>
+        </footer>
+    </div>
+    </body>
+    </html>

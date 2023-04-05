@@ -2,14 +2,136 @@
 
 @media (min-width: 768px) {
     body {
-        background-color: bisque;
+        background-color: white;
         width: 412px;
     }
   }
 
-body {
-    width: 768px;
-    height: 100vh;
-    background-color: #E9EDC9;
+  body {
+      font-family: 'Nanum Gothic', sans-serif;
+      margin: 0 auto;
+  }
 
+.calc-container {
+    display: flex;
+    flex-direction: column;
+    padding: 1rem 1rem;
+    height: 100vh;
+    background-color: #CCD5AE;
+
+}
+
+.header__title {
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+    text-align: center;
+    font-size: 30px;
+    font-weight: 700;
+    text-shadow: 0.2rem 0.2rem #CCD5AE;
+}
+
+.calc {
+    display: grid;
+    grid-template-rows: repeat(3, 1fr);
+    grid-template-columns: repeat(7, 1fr);
+    place-items: center center;
+    height: 20vh;
+    background-color: #FEFAE0;
+    margin: 0.5rem 1rem;
+    border-radius: 0.2rem;
+    text-align: center;
+    box-shadow: 0.3rem 0.3rem #D4A373;
+}
+
+.calc__do-num-title {
+    position: relative;
+    z-index: 100;
+}
+
+.calc__do-num-img {
+    position: absolute;
+    top: -8px;
+    left: -12px;
+    width: 2.2rem;
+    height: 2.2rem;
+    /* margin-left: 0.5rem; */
+    size: 2rem;
+    font-weight: 600;
+    z-index: -5;
+}
+
+.calc__week {
+    /* display: grid;
+    grid-template-columns: repeat(7, 1fr); */
+}
+
+.calc__do-num {
+    /* display: grid;
+    grid-template-columns: repeat(7, 1fr); */
+}
+
+.calc__day-num {
+    /* display: grid;
+    grid-template-columns: repeat(7, 1fr); */
+} 
+
+.to-do-container {
+    margin-top: 2rem;
+    margin-left: 1rem;
+    margin-right: 1rem;
+    width: 8rem;
+    background-color: #FEFAE0;
+    padding: 0.5rem;
+    border-radius: 0.2rem;
+}
+
+article {
+    text-align: center;
+}
+.to-do__title{
+    display: inline-flex;
+    justify-content: center;
+    text-align: center;
+    color: #D4A373;
+    font-weight: 700;
+    /* height: auto; */
+
+}
+
+.to-do__btn {
+    width: 1rem;
+    height: 1rem;
+    margin-left: 0.5rem;
+    size: 2rem;
+    font-weight: 600;
+
+}
+
+ul > .to-do__list:before {
+    content: "❤️  ";
+}
+
+footer {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    /* align-items: end; */
+    bottom: 0;
+}
+
+.footer__img {
+    width: 2rem;
+    /* height: 1rem; */
+    /* margin: 1rem; */
+}
+.footer__btn {
+    background-color: #FAEDCD;
+    width: 4rem;
+    height: 4rem;
+    margin: 1rem;
+    border-radius: 10%;
+    box-shadow: 0.1rem 0.1rem #D4A373;
+}
+.footer__btn:focus {
+    background-color:#D4A373;
 }
