@@ -1,0 +1,15 @@
+@import "reset.css";
+
+@media (min-width: 768px) {
+    body {
+        background-color: bisque;
+        width: 412px;
+    }
+  }
+
+body {
+    width: 768px;
+    height: 100vh;
+    background-color: #E9EDC9;
+
+}
