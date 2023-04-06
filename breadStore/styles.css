@@ -46,7 +46,6 @@ header {
 }
 
 
-/* .menuBar-detail */
 .c-menu-bar:hover> .menu-bar__detail {
     display: block;
 }
