@@ -180,11 +180,11 @@ section {
 
 
 @media(max-width:650px) {
-    .card {
-        width: 50vh;
+    .section__card {
+        width: 55vw;
         height: auto;
     }
-    .bakery-tag {
+    .section__tag {
         padding-bottom: 0.5rem;
         width: 45vw;
         height: auto;
