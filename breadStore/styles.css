@@ -159,6 +159,11 @@ h3 {
     display: inline-block;
 }
 
+.section__tag-list::before {
+    content: "#";
+}
+
+
 
 .section__img {
     height: 10vh;
