@@ -1,7 +1,7 @@
 @import "reset.css";
 
 body {
-    padding-top: 4em;
+    padding-top: 4rem;
     font-family: 'Noto Sans KR', sans-serif;
     background-color: #def2f1;
 }
@@ -11,7 +11,6 @@ header {
     height: 8vh;
     position:fixed;
     justify-content: space-between;
-    align-items: center;
     color: #feffff;
     background-color: #2b7a78;
     top: 0;
@@ -20,13 +19,13 @@ header {
 }
 
 h1 {
-    margin: 0.5rem 1rem ;
+    margin: 1rem ;
     font-weight: 500;
     font-size: 2rem;
 } 
 
 .c-menu-bar {
-    font-size: 2rem;
+    font-size: 2.5rem;
     margin-right: 1rem;
     padding-top: 0;
     margin-top: 0;
@@ -51,31 +50,21 @@ h1 {
 }
 
 .menu-bar__detail > h2 {
-    border-bottom: 0.3rem solid #17252A;
-    padding-bottom: 0.5rem;
+    border-bottom: 0.1rem solid #17252A;
+    padding-bottom: 1rem;
 }
 
-.menu-bar__list {
-    font-weight: 400;
-    font-size: 1.5rem;
-    padding-bottom: 0.5rem;
-
-}
-
-.menu-bar__list-title {
-    padding: 0 auto;
-    margin-top: 0.5rem;
+.menu-bar__list > li {
+    margin-top: 0.8rem;
     font-weight: 200;
     font-size: 1rem;
     cursor: pointer;
 
 }
 
-
 main {
     display: flex;
-    justify-content: center;
-    padding-top: 1rem;
+    padding-top: 1.2rem;
 }
 
 nav {
@@ -83,7 +72,6 @@ nav {
     height: fit-content;
     border-radius: 1rem;
     flex-direction: column;
-    flex-shrink:0;
     margin-left: 1rem;
     padding-bottom: 0.5rem;
     font-size: 1rem;
@@ -101,7 +89,6 @@ nav > h2 {
     width: 6rem;
     margin: 0.3rem 0.5rem;
     padding:  0.2rem 0.8rem;
-    align-content: stretch;
     background-color: #feffff;
     border-radius: 2rem;
     font-weight: 500;
@@ -110,7 +97,6 @@ nav > h2 {
 .nav__category:hover {
     color:#def2f1;
     background-color: #17252A;
-    text-decoration: none;
 }
 
 .nav__category > p {
@@ -119,7 +105,6 @@ nav > h2 {
 
 section {
     display: flex;
-    flex-grow: 1;
     flex-flow: wrap;
 
 }
@@ -127,18 +112,17 @@ section {
 .section__card {
     display: flex;
     width: 12rem;
-    height: auto;
     flex-direction: column;
     align-items: center;
-    margin-left: 0.8rem;
-    margin-bottom: 0.8rem;
-    padding: 1.2rem;
+    margin-left: 1.2rem;
+    margin-bottom: 1.2rem;
+    padding: 1rem;
     background-color: #feffff;
     border-radius: 0.5rem;
     box-shadow: 0.3rem 0.3rem #2b7a78;
 }
 
-h3 {
+.section__card h3 {
     margin: 0.5rem;
     font-weight: 600;
     font-size: 1.3rem;
@@ -146,7 +130,6 @@ h3 {
 
 .section__tag {
     width: 8rem;
-    height: auto;
     padding-bottom: 0.5rem;
     white-space: nowrap;
     overflow: hidden;
@@ -161,10 +144,8 @@ h3 {
     content: "#";
 }
 
-
-
 .section__img {
-    height: 10vh;
+    height: 16vh;
     margin: 1rem;
     object-fit:contain;
     max-width: 80%
@@ -172,12 +153,12 @@ h3 {
 
 .section__like {
     align-self: flex-end;
-    color: black;
+    color: #17252A;
     font-size: 2rem;
 }
 
 .section__like:hover {
-    color: palevioletred;
+    color: #E97BAC;
 }
 
 
@@ -191,9 +172,6 @@ h3 {
         width: 45vw;
         height: auto;
         padding-bottom: 0.5rem;
-        white-space:normal;
-        text-align: center;
-
     }
 
 }
