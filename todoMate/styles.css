@@ -2,23 +2,23 @@
 
 @media (min-width: 768px) {
     body {
-        background-color: white;
         width: 412px;
         height: 100vh;
+        background-color: white;
     }
   }
 
   body {
-      font-family: 'Nanum Gothic', sans-serif;
-      margin: 0 auto;
       height: 100vh;
+      margin: 0 auto;
+      font-family: 'Nanum Gothic', sans-serif;
   }
 
 .full-container {
     display: flex;
+    height: auto;
     flex-direction: column;
     padding: 1rem 1rem;
-    height: auto;
     background-color: #CCD5AE;
 
 }
@@ -34,38 +34,49 @@
 
 .calc {
     display: grid;
+    height: 20vh;
+    margin: 0.5rem 1rem;
     grid-template-rows: repeat(3, 1fr);
     grid-template-columns: repeat(7, 1fr);
     place-items: center center;
-    height: 20vh;
     background-color: #FEFAE0;
-    margin: 0.5rem 1rem;
     border-radius: 0.2rem;
     text-align: center;
     box-shadow: 0.3rem 0.3rem #D4A373;
 }
 
 .calc__do-num-title {
-    position: relative;
     z-index: 100;
+    position: relative;
     color: #FAEDCD;
 }
 
 .calc__do-num-img {
+    z-index: -5;
+    width: 2.2rem;
+    height: 2.2rem;
     position: absolute;
     top: -8.3px;
     left: -12.5px;
-    width: 2.2rem;
-    height: 2.2rem;
     size: 2rem;
     font-weight: 600;
-    z-index: -5;
 }
 
+/* https://codepen.io/sosuke/pen/Pjoqqphttps://codepen.io/sosuke/pen/Pjoqqp */
+section.calc > p:nth-child(13) > img {
+    filter: invert(56%) sepia(46%) saturate(302%) hue-rotate(346deg) brightness(93%) contrast(91%);
+}
+
+section.calc > p:nth-child(20) {
+    filter: invert(56%) sepia(46%) saturate(302%) hue-rotate(346deg) brightness(93%) contrast(91%);
+}
+
+
+
 .to-dos {
-    height: 80vh;
-    margin: 2rem;
     display: flex;
+    height: 60vh;
+    margin: 2rem;
     flex-direction: column;
     flex-wrap: wrap;
     overflow-x: auto;
@@ -158,10 +169,10 @@ footer {
     width: 2rem;
 }
 .footer__btn {
-    background-color: #FAEDCD;
     width: 4rem;
     height: 4rem;
     margin: 1rem;
+    background-color: #FAEDCD;
     border-radius: 10%;
     box-shadow: 0.1rem 0.1rem #D4A373;
 }
