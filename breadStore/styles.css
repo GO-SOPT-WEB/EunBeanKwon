@@ -50,6 +50,11 @@ h1 {
     display: block;
 }
 
+h2 {
+    border-bottom: 1px solid #17252A;
+    padding-bottom: 0.5rem;
+}
+
 .menu-bar__list {
     font-weight: 400;
     font-size: 1.5rem;
