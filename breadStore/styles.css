@@ -113,15 +113,6 @@ nav > h2 {
     text-decoration: none;
 }
 
-.nav__category [href] {
-    color: black;
-}
-
-.nav__category:hover [href]{
-    color:#def2f1;
-    background-color: #17252A;
-}
-
 section {
     display: flex;
     flex-grow: 1;
