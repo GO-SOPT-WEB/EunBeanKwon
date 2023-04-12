@@ -46,7 +46,6 @@ header {
 }
 
 
-/* .menuBar-detail */
 .c-menu-bar:hover> .menu-bar__detail {
     display: block;
 }
@@ -99,7 +98,6 @@ nav {
     width: 6rem;
     margin: 0.3rem 0.5rem;
     padding:  0.2rem 0.8rem;
-    align-content: stretch;
     background-color: #feffff;
     border-radius: 10px;
     font-weight: 500;
@@ -164,7 +162,6 @@ section {
 .section__img {
     object-fit:contain;
     margin: 1rem;
-    max-width: 80%;
     height: 10vh
 }
 
