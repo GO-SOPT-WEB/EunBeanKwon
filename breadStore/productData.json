@@ -1,0 +1,81 @@
+{
+  "breads": [
+    {
+      "id": 1,
+      "name": "네모바게트",
+      "type": "bread",
+      "src": "Bread1.png",
+      "hashtags": ["바게트", "바게뜨?", "가로로 긴 바게뜨"]
+    },
+    {
+      "id": 2,
+      "name": "바게트",
+      "type": "bread",
+      "src": "Bread2.png",
+      "hashtags": ["마싯는", "바게뜨?", "생크림이랑", "같이 먹으면", "맛있겠다"]
+    },
+    {
+      "id": 3,
+      "name": "초코 생크림 케이크",
+      "type": "cake",
+      "src": "Bread3.png",
+      "hashtags": ["장난감?", "한입만", "우유랑", "커피랑"]
+    },
+    {
+      "id": 4,
+      "name": "레드벨벳 케이크",
+      "type": "cake",
+      "src": "Bread4.png",
+      "hashtags": ["해시", "태그", "입니다", "너무 많다"]
+    },
+    {
+      "id": 5,
+      "name": "레드벨벳 쿠키",
+      "type": "cookie",
+      "src": "Bread5.png",
+      "hashtags": ["해시", "태그", "입니다", "너무 많다"]
+    },
+    {
+      "id": 6,
+      "name": "초코칩 쿠키",
+      "type": "cookie",
+      "src": "Bread6.png",
+      "hashtags": ["해시", "태그", "입니다", "너무 많다"]
+    },
+    {
+      "id": 6,
+      "name": "바게트 (묶음)",
+      "type": "bread",
+      "src": "Bread6.png",
+      "hashtags": ["해시", "태그", "입니다", "너무 많다"]
+    },
+    {
+      "id": 7,
+      "name": "딸기케이크",
+      "type": "cake",
+      "src": "Bread7.png",
+      "hashtags": ["해시", "태그", "입니다", "너무 많다"]
+    },
+    {
+      "id": 8,
+      "name": "로투스 치즈케이크",
+      "type": "cake",
+      "src": "Bread8.png",
+      "hashtags": ["해시", "태그", "입니다", "너무 많다"]
+    },
+    {
+      "id": 9,
+      "name": "베리 치즈케이크",
+      "type": "cake",
+      "src": "Bread9.png",
+      "hashtags": ["해시", "태그", "입니다", "너무 많다"]
+    },
+    {
+      "id": 10,
+      "name": "식빵",
+      "type": "bread",
+      "src": "Bread10.png",
+      "hashtags": ["해시", "태그", "입니다", "너무 많다"]
+    }
+  ]
+}
