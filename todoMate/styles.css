@@ -31,17 +31,21 @@ body {
   text-shadow: 0.2rem 0.2rem #ccd5ae;
 }
 
-.calc {
+.calc__container {
   display: grid;
-  height: 20vh;
-  margin: 0.5rem 1rem;
-  grid-template-rows: repeat(3, 1fr);
   grid-template-columns: repeat(7, 1fr);
-  place-items: center center;
   background-color: #fefae0;
   border-radius: 0.2rem;
   text-align: center;
   box-shadow: 0.3rem 0.3rem #d4a373;
+}
+
+.day {
+  display: grid;
+  grid-template-rows: repeat(3, 1fr);
+  height: 20vh;
+  margin: 0.5rem 1rem;
+  place-items: center center;
 }
 
 .calc__do-num-title {
@@ -62,15 +66,15 @@ body {
 }
 
 /* https://codepen.io/sosuke/pen/Pjoqqphttps://codepen.io/sosuke/pen/Pjoqqp */
-section.calc > p:nth-child(13) > img {
+/* section.calc__container > p:nth-child(13) > img {
   filter: invert(56%) sepia(46%) saturate(302%) hue-rotate(346deg)
     brightness(93%) contrast(91%);
 }
 
-section.calc > p:nth-child(20) {
+section.calc__container > p:nth-child(20) {
   filter: invert(56%) sepia(46%) saturate(302%) hue-rotate(346deg)
     brightness(93%) contrast(91%);
-}
+} */
 
 .to-dos-container {
   display: flex;
@@ -83,7 +87,7 @@ section.calc > p:nth-child(20) {
   row-gap: 1rem;
 }
 
-.to-dos {
+.article {
   padding: 0.5rem;
   flex: 0 0 auto;
 }
@@ -99,7 +103,13 @@ section.calc > p:nth-child(20) {
   border-radius: 1rem;
   margin-bottom: 1rem;
 }
+/* 
+.day > p {
+  background-color: none;
+  color: #000;
+} */
 
+/* .to-do__title:nth-child() */
 .to-dos:nth-child(2) > p {
   background-color: #b08968;
   color: #fefae0;
@@ -108,6 +118,7 @@ section.calc > p:nth-child(20) {
   background-color: #a4ac86;
   color: #fefae0;
 }
+
 .to-dos:nth-child(4) > p {
   background-color: #333d29;
   color: #fefae0;
