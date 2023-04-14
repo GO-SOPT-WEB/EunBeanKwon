@@ -2,7 +2,7 @@
 
 @media (min-width: 768px) {
   body {
-    width: 412px;
+    width: 43vw;
     height: 100vh;
     background-color: white;
   }
@@ -26,7 +26,7 @@ body {
   padding-top: 1rem;
   padding-bottom: 1rem;
   text-align: center;
-  font-size: 30px;
+  font-size: 2rem;
   font-weight: 700;
   text-shadow: 0.2rem 0.2rem #ccd5ae;
 }
@@ -59,22 +59,18 @@ body {
   width: 2.2rem;
   height: 2.2rem;
   position: absolute;
-  top: -8.3px;
-  left: -12.5px;
+  top: -0.55rem;
+  left: -0.8rem;
   size: 2rem;
   font-weight: 600;
 }
 
 /* https://codepen.io/sosuke/pen/Pjoqqphttps://codepen.io/sosuke/pen/Pjoqqp */
-/* section.calc__container > p:nth-child(13) > img {
+.day:nth-child(6) img,
+.day:nth-child(6) .calc__day-num-title {
   filter: invert(56%) sepia(46%) saturate(302%) hue-rotate(346deg)
     brightness(93%) contrast(91%);
 }
-
-section.calc__container > p:nth-child(20) {
-  filter: invert(56%) sepia(46%) saturate(302%) hue-rotate(346deg)
-    brightness(93%) contrast(91%);
-} */
 
 .to-dos-container {
   display: flex;
@@ -103,13 +99,7 @@ section.calc__container > p:nth-child(20) {
   border-radius: 1rem;
   margin-bottom: 1rem;
 }
-/* 
-.day > p {
-  background-color: none;
-  color: #000;
-} */
 
-/* .to-do__title:nth-child() */
 .to-dos:nth-child(2) > p {
   background-color: #b08968;
   color: #fefae0;
@@ -137,6 +127,7 @@ section.calc__container > p:nth-child(20) {
   size: 2rem;
   font-weight: 600;
 }
+
 .to-do__list-container {
   display: flex;
   margin-bottom: 0.7rem;
@@ -150,7 +141,7 @@ section.calc__container > p:nth-child(20) {
   text-overflow: ellipsis;
 }
 
-.to-do__list-btn {
+.to-do__list-container > button {
   margin-right: 0.4rem;
 }
 
@@ -163,7 +154,6 @@ section.calc__container > p:nth-child(20) {
   height: 1rem;
   margin-left: 0.5rem;
   size: 2rem;
-  line-height: 0px;
 }
 
 footer {
