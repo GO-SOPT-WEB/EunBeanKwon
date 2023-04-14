@@ -54,14 +54,13 @@ body {
   color: #faedcd;
 }
 
-.calc__do-num-img {
+.calc__do-num-title > img {
   z-index: -5;
   width: 2.2rem;
   height: 2.2rem;
   position: absolute;
   top: -0.55rem;
   left: -0.8rem;
-  size: 2rem;
   font-weight: 600;
 }
 
@@ -83,13 +82,9 @@ body {
   row-gap: 1rem;
 }
 
-.article {
-  padding: 0.5rem;
-  flex: 0 0 auto;
-}
-
 .to-do__title {
-  display: inline-flex;
+  display: flex;
+  width: fit-content;
   text-align: center;
   color: #d4a373;
   font-weight: 700;
@@ -134,8 +129,7 @@ body {
 }
 
 .to-do__list {
-  display: inline;
-  width: 7em;
+  width: 7rem;
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
