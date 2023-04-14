@@ -44,8 +44,7 @@ h1 {
     padding: 2rem 1rem;
 }
 
-
-.c-menu-bar:hover > .menu-bar__detail {
+.c-menu-bar:hover> .menu-bar__detail {
     display: block;
 }
 
