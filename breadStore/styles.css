@@ -1,17 +1,16 @@
 @import "reset.css";
 
 body {
-    padding-top: 4em;
+    padding-top: 4rem;
     font-family: 'Noto Sans KR', sans-serif;
     background-color: #def2f1;
 }
 
 header {
+    display: flex;
     height: 8vh;
     position:fixed;
-    display: flex;
     justify-content: space-between;
-    align-items: center;
     color: #feffff;
     background-color: #2b7a78;
     top: 0;
@@ -19,107 +18,91 @@ header {
     right: 0;
 }
 
-.title {
-    margin: 0.5rem 1rem ;
+h1 {
+    margin: 1rem ;
     font-weight: 500;
     font-size: 2rem;
 } 
 
 .c-menu-bar {
-    font-size: 2rem;
+    font-size: 2.5rem;
     margin-right: 1rem;
     padding-top: 0;
     margin-top: 0;
-    padding-bottom: 5px;
+    padding-bottom: 0.2rem;
 }
 
 .menu-bar__detail {
     display: none;
+    width: 8rem;
+    height: 100vh;
     color: #17252A;
     position: absolute;
     top: 0;
     right: 0;
     background-color: #feffff;
-    width: 8rem;
-    height: 100vh;
     padding: 2rem 1rem;
 }
-
 
 .c-menu-bar:hover> .menu-bar__detail {
     display: block;
 }
 
-.menu-bar__list {
-    font-weight: 400;
-    font-size: 1.5rem;
-    padding-bottom: 0.5rem;
-
+.menu-bar__detail > h2 {
+    border-bottom: 0.1rem solid #17252A;
+    padding-bottom: 1rem;
 }
 
-.menu-bar__list-title {
-    padding: 0 auto;
-    margin-top: 0.5rem;
+.menu-bar__list > li {
+    margin-top: 0.8rem;
     font-weight: 200;
     font-size: 1rem;
     cursor: pointer;
 
 }
 
-
-.main {
+main {
     display: flex;
-    justify-content: center;
-    padding-top: 1rem;
+    padding-top: 1.2rem;
 }
 
 nav {
-    border-radius: 10px;
     display: flex;
+    height: fit-content;
+    border-radius: 1rem;
     flex-direction: column;
-    flex-shrink:0;
     margin-left: 1rem;
     padding-bottom: 0.5rem;
-    font-size: 15px;
-    height: fit-content;
+    font-size: 1rem;
     background-color: #2b7a78;
 }
 
-
-.nav__title {
+nav > h2 {
     margin: 0.5rem 0.7rem;
     font-weight: 400;
     color: white;
     font-size: 1.2rem;
 }
 
-
 .nav__category {
     width: 6rem;
     margin: 0.3rem 0.5rem;
     padding:  0.2rem 0.8rem;
     background-color: #feffff;
-    border-radius: 10px;
+    border-radius: 2rem;
     font-weight: 500;
 }
 
 .nav__category:hover {
     color:#def2f1;
     background-color: #17252A;
-    text-decoration: none;
 }
 
-.nav__category [href] {
-    color: black;
-}
-
-.nav__category:hover [href]{
-    color:#def2f1;
-    background-color: #17252A;
+.nav__category > p {
+    display: inline-block;
 }
 
 section {
-    flex-grow: 1;
     display: flex;
     flex-flow: wrap;
 
@@ -127,28 +110,26 @@ section {
 
 .section__card {
     display: flex;
+    width: 12rem;
     flex-direction: column;
     align-items: center;
-    margin-left: 0.8rem;
-    margin-bottom: 0.8rem;
+    margin-left: 1.2rem;
+    margin-bottom: 1.2rem;
     padding: 1rem;
     background-color: #feffff;
-    border-radius: 20px;
-    box-shadow: 2px 2px #2b7a78;
-    width: 12rem;
-    height: auto;
+    border-radius: 0.5rem;
+    box-shadow: 0.3rem 0.3rem #2b7a78;
 }
 
-.section__title {
+.section__card h3 {
     margin: 0.5rem;
     font-weight: 600;
     font-size: 1.3rem;
 }
 
 .section__tag {
-    padding-bottom: 0.5rem;
     width: 8rem;
-    height: auto;
+    padding-bottom: 0.5rem;
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
@@ -158,37 +139,38 @@ section {
     display: inline-block;
 }
 
+.section__tag-list::before {
+    content: "#";
+}
 
 .section__img {
-    object-fit:contain;
+    height: 16vh;
     margin: 1rem;
-    height: 10vh
+    object-fit:contain;
+    max-width: 80%
 }
 
 .section__like {
     align-self: flex-end;
-    color: black;
+    color: #17252A;
     font-size: 2rem;
 }
 
 .section__like:hover {
-    color: palevioletred;
+    color: #E97BAC;
 }
 
 
 
 @media(max-width:650px) {
-    .card {
-        width: 50vh;
+    .section__card {
+        width: 55vw;
         height: auto;
     }
-    .bakery-tag {
-        padding-bottom: 0.5rem;
+    .section__tag {
         width: 45vw;
         height: auto;
-        white-space:normal;
-        text-align: center;
-
+        padding-bottom: 0.5rem;
     }
 
 }
