@@ -12,7 +12,7 @@
     <link rel="icon" href="./imgs/Bread11.png" />
 
 </head>
-<body>
+<body onload=breadlist()>
     <!-- header -->
     <header>
         <h1>은빈이네 빵집 🥐</h1>
@@ -48,152 +48,10 @@
             </label>
         </nav>
         <!-- section : container of cards -->
-        <section>
-            <!-- article : a card * 12 -->
-            <article class="section__card">
-                <h3> 네모바게트 </h3>
-                <ul class="section__tag">
-                    <li class="section__tag-list">옆면이 보이는</li>
-                    <li class="section__tag-list">바게뜨</li>
-                    <li class="section__tag-list">바게뜨?</li>
-                    <li class="section__tag-list">바게트?</li>
-                    <li class="section__tag-list">모르겟다</li>
-                </ul>
-                    <img class="section__img" src="./imgs/Bread1.png" alt="Baguette_IMG01"/>
-                    <button type="button" class="section__like"> ♥ </button>
-                <!-- ❤️  -->
-            </article>
-            <article class="section__card">
-                <h3> 바게트 </h3>
-                <ul class="section__tag">
-                    <li class="section__tag-list">마싯는</li>
-                    <li class="section__tag-list">바게트</li>
-                    <li class="section__tag-list">생크림이랑</li>
-                    <li class="section__tag-list">같이 먹기</li>
-                    <li class="section__tag-list">마싯겟다</li>
-                </ul>
-                    <img class="section__img" src="./imgs/Bread2.png" alt="Baguette_IMG"/>
-                    <button type="button"  class="section__like"> ♥ </button type="button">
-                <!-- ❤️  -->
-            </article>
-            <article class="section__card">
-                <h3> 초코 생크림 케이크 </h3>
-                <ul class="section__tag">
-                    <li class="section__tag-list">장난감같다</li>
-                    <li class="section__tag-list">한입만</li>
-                    <li class="section__tag-list">우유랑</li>
-                    <li class="section__tag-list">커피랑</li>
-                </ul>
-                    <img class="section__img" src="./imgs/Bread3.png" alt="chocoCakeIMG"/>
-                    <button type="button" class="section__like"> ♥ </button>
-                <!-- ❤️  -->
-            </article>
-            <article class="section__card">
-                <h3> 레드벨벳 케이크 </h3>
-                <ul class="section__tag">
-                    <li class="section__tag-list">hash</li>
-                    <li class="section__tag-list">many</li>
-                    <li class="section__tag-list">hashtag</li>
-                    <li class="section__tag-list">longtag</li>
-                    <li class="section__tag-list">tag</li>
-                </ul>
-                    <img class="section__img" src="./imgs/Bread4.png" alt="redvelvetCakeIMG"/>
-                    <button type="button" class="section__like"> ♥ </button>
-                <!-- ❤️  -->
-            </article>
-            <article class="section__card">
-                <h3> 레드벨벳 쿠키  </h3>
-                <ul class="section__tag">
-                    <li class="section__tag-list">hash</li>
-                    <li class="section__tag-list">many</li>
-                    <li class="section__tag-list">hashtag</li>
-                    <li class="section__tag-list">longtag</li>
-                    <li class="section__tag-list">tag</li>
-                </ul>
-                    <img class="section__img" src="./imgs/Bread5.png" alt="redvelvetCookieIMG"/>
-                    <button type="button" class="section__like"> ♥ </button>
-                <!-- ❤️  -->
-            </article>
-            <article class="section__card">
-                <h3> 초코칩쿠키 </h3>
-                <ul class="section__tag">
-                    <li class="section__tag-list">hash</li>
-                    <li class="section__tag-list">many</li>
-                    <li class="section__tag-list">hashtag</li>
-                    <li class="section__tag-list">longtag</li>
-                    <li class="section__tag-list">tag</li>
-                </ul>
-                    <img class="section__img" src="./imgs/Bread6.png" alt="chocochipCookieIMG"/>
-                    <button type="button" class="section__like"> ♥ </button>
-                <!-- ❤️  -->
-            </article>
-            <article class="section__card">
-                <h3> 바게트(묶음) </h3>
-                <ul class="section__tag">
-                    <li class="section__tag-list">hash</li>
-                    <li class="section__tag-list">many</li>
-                    <li class="section__tag-list">hashtag</li>
-                    <li class="section__tag-list">longtag</li>
-                    <li class="section__tag-list">tag</li>
-                </ul>
-                    <img class="section__img" src="./imgs/Bread7.png" alt="Baguettes_IMG"/>
-                    <button type="button" class="section__like"> ♥ </button>
-                <!-- ❤️  -->
-            </article>
-            <article class="section__card">
-                <h3> 딸기케이크  </h3>
-                <ul class="section__tag">
-                    <li class="section__tag-list">hash</li>
-                    <li class="section__tag-list">many</li>
-                    <li class="section__tag-list">hashtag</li>
-                    <li class="section__tag-list">longtag</li>
-                    <li class="section__tag-list">tag</li>
-                </ul>
-                    <img class="section__img" src="./imgs/Bread8.png" alt="straberryCakeIMG"/>
-                    <button type="button" class="section__like"> ♥ </button>
-                <!-- ❤️  -->
-            </article>
-            <article class="section__card">
-                <h3> 로투스 치즈케이크 </h3>
-                <ul class="section__tag">
-                    <li class="section__tag-list">hash</li>
-                    <li class="section__tag-list">many</li>
-                    <li class="section__tag-list">hashtag</li>
-                    <li class="section__tag-list">longtag</li>
-                    <li class="section__tag-list">tag</li>
-                </ul>
-                    <img class="section__img" src="./imgs/Bread9.png" alt="LotuscheeseCakeIMG"/>
-                    <button type="button" class="section__like"> ♥ </button>
-                <!-- ❤️  -->
-            </article>
-            <article class="section__card">
-                <h3> 베리치즈케이크  </h3>
-                <ul class="section__tag">
-                    <li class="section__tag-list">hash</li>
-                    <li class="section__tag-list">many</li>
-                    <li class="section__tag-list">hashtag</li>
-                    <li class="section__tag-list">longtag</li>
-                    <li class="section__tag-list">tag</li>
-                </ul>
-                    <img class="section__img" src="./imgs/Bread10.png" alt="berryCheeseCakeIMG"/>
-                    <button type="button" class="section__like"> ♥ </button>
-                <!-- ❤️  -->
-            </article>
-            <article class="section__card">
-                <h3> 식빵 </h3>
-                <ul class="section__tag">
-                    <li class="section__tag-list">hash</li>
-                    <li class="section__tag-list">many</li>
-                    <li class="section__tag-list">hashtag</li>
-                    <li class="section__tag-list">longtag</li>
-                    <li class="section__tag-list">tag</li>
-                </ul>
-                    <img class="section__img" src="./imgs/Bread11.png" alt="basicBreadIMG" />
-                    <button type="button" class="section__like"> ♥ </button>
-                <!-- ❤️  -->
-            </article>
-         </section>
+        <section id="cards"> 
+            <!-- cards by js -->
+        </section>
     <main>
-    
+        <script src="main.js"></script>
 </body>
 </html>
