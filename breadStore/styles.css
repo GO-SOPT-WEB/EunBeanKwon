@@ -97,8 +97,9 @@ nav > h2 {
   background-color: #17252a;
 }
 
-.nav__category > p {
+.nav__category > label {
   display: inline-block;
+  width: 70%;
 }
 
 section {

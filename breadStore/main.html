@@ -30,31 +30,37 @@
     <main>
         <nav>
             <h2>종류</h2>
-            <label class="nav__category">
-                <input id="all" type="checkbox" checked onclick="checked_all()"/>
-                <p>전체</p>
-            </label>
-            <label class="nav__category">
-                <input id="breads" type="checkbox"/>
-                <p>빵</p>
-            </label>
-            <label class="nav__category">
-                <input id="cakes" type="checkbox"/>
-                <p>케이크</p>
-            </label>
-            <label class="nav__category">
-                <input id="cookies" type="checkbox"/>
-                <p>쿠키</p>
-            </label>
+
+            <div class="nav__category">
+                <input name="category" value="전체" type="checkbox" id="ckAll" onclick="getCategoryValue()"/>
+                <label for="ckAll" >전체</label>
+            </div>
+
+            <div class="nav__category">
+                <input name="category" value="ckBread"  type="checkbox" id="ckBread" onclick="getCategoryValue()"/>
+                <label for="ckBread" >빵</label>
+            </div>
+
+            <div class="nav__category">
+                <input name="category" value="전체" type="checkbox" id="ckCake" onclick="getCategoryValue()"/>
+                <label for="ckCake" >케이크</label>
+            </div>
+
+            <div class="nav__category">
+                <input name="category" value="전체" type="checkbox" id="ckCookie" onclick="getCategoryValue()"/>
+                <label for="ckCookie" >쿠키</label>
+            </div>
         </nav>
         <!-- section : container of cards -->
-        <section id="cards"> 
+        <section id="cards">
             <div id="section__category"> 
-                <!-- TagBoxs --> 이 자리 뭔데
+                <!-- TagBoxs --> 
              </div>
+            </section>
             <!-- cards by js -->
         </section>
     <main>
         <script type="module" src="main.js"></script>
+        <script src="Event.js"></script>
 </body>
 </html>
