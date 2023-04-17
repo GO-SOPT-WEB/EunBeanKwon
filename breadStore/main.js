@@ -10,7 +10,7 @@ const breadsList = breads.map((bread) => {
     <article class="section__card">
       <h3>${bread.name}</h3>
       <ul class="section__tag">${hashtags} </ul>
-      <img class="section__img" src="./imgs/${bread.src}"/>
+      <img class="section__img" src="./imgs/${bread.src}" alt="${bread.name}/>
       <button class="section__like" id="btn${bread.id}" type="button">♥</button>
     </article>
   `;
