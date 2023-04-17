@@ -32,22 +32,22 @@
             <h2>종류</h2>
 
             <div class="nav__category">
-                <input name="category" value="전체" type="checkbox" id="ckAll" onclick="getCategoryValue()"/>
+                <input name="category" value="전체" type="checkbox" id="ckAll" onclick="createCategoryTag(this)"/>
                 <label for="ckAll" >전체</label>
             </div>
 
             <div class="nav__category">
-                <input name="category" value="ckBread"  type="checkbox" id="ckBread" onclick="getCategoryValue()"/>
+                <input name="category" value="빵"  type="checkbox" id="ckBread" onclick="getCategoryValue(this)"/>
                 <label for="ckBread" >빵</label>
             </div>
 
             <div class="nav__category">
-                <input name="category" value="전체" type="checkbox" id="ckCake" onclick="getCategoryValue()"/>
+                <input name="category" value="케이크" type="checkbox" id="ckCake" onclick="getCategoryValue(this)"/>
                 <label for="ckCake" >케이크</label>
             </div>
 
             <div class="nav__category">
-                <input name="category" value="전체" type="checkbox" id="ckCookie" onclick="getCategoryValue()"/>
+                <input name="category" value="쿠키" type="checkbox" id="ckCookie" onclick="getCategoryValue()"/>
                 <label for="ckCookie" >쿠키</label>
             </div>
         </nav>

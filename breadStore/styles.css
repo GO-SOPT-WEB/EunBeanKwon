@@ -8,6 +8,7 @@ body {
 
 header {
   display: flex;
+  z-index: 99;
   height: 4rem;
   position: fixed;
   justify-content: space-between;
@@ -113,6 +114,18 @@ section > div {
   margin: 0.5rem 1.2rem;
 }
 
+#section__category {
+  display: flex;
+}
+
+#section__category > div {
+  background-color: #2b7a78;
+  color: #def2f1;
+  margin-left: 0.5rem;
+  padding: 0.5rem 1rem;
+  border-radius: 2rem;
+}
+
 .section__card {
   display: flex;
   width: 12rem;
@@ -132,12 +145,50 @@ section > div {
   font-size: 1.3rem;
 }
 
+.section__card > div {
+  display: flex;
+}
+.section__card button {
+  background-color: #17252a;
+  color: #def2f1;
+  padding: 0rem 0.3rem;
+  margin-left: 0.4rem;
+}
+
+.card-modal-container {
+  visibility: hidden;
+  z-index: 0;
+  width: 9rem;
+  height: 13rem;
+  position: absolute;
+  background-color: #def2f1;
+  overflow: auto;
+  padding: 1rem;
+  border-radius: 0.3rem;
+}
+
+.card-modal-container > div {
+  display: flex;
+  margin: 15% auto;
+  flex-direction: column;
+}
+
+.card-modal-container li {
+  margin: 0.2rem 0rem;
+}
+
+.card-modal-close {
+  height: fit-content;
+  font-size: 1rem;
+  color: #17252a;
+}
+
 .section__tag {
   width: 8rem;
   padding-bottom: 0.5rem;
   white-space: nowrap;
   overflow: hidden;
-  text-overflow: ellipsis;
+  text-overflow: clip;
 }
 
 .section__tag-list {

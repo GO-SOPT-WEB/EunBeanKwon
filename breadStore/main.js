@@ -8,12 +8,19 @@ const breadsList = breads.map((bread) => {
     .join(" ");
   return `
     <article class="section__card">
+      <div class="card-modal-container" > 
+        <div> ${hashtags} </div>
+        <button type="button" class="card-modal-close" onclick="closeModal(this)" >X</button>
+      </div>
       <h3>${bread.name}</h3>
-      <ul class="section__tag">${hashtags} </ul>
+      <div>
+        <ul class="section__tag">${hashtags} </ul>
+        <button type="button" onclick="openModal(this)" class="section__tag-btn">+</button>
+      </div>
       <img class="section__img" src="./imgs/${bread.src}" alt="${bread.name}/>
-      <button class="section__like" id="btn${bread.id}" type="button">♥</button>
+      <button type="button class="section__like" id="btn${bread.id}" ">♥</button>
     </article>
   `;
 });
 
-articleList.innerHTML = breadsList;
+articleList.insertAdjacentHTML("beforeend", breadsList);
