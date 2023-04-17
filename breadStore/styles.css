@@ -106,6 +106,12 @@ section {
   flex-flow: wrap;
 }
 
+section > div {
+  width: 95%;
+  height: 2rem;
+  margin: 0.5rem 1.2rem;
+}
+
 .section__card {
   display: flex;
   width: 12rem;

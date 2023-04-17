@@ -12,7 +12,7 @@
     <link rel="icon" href="./imgs/Bread11.png" />
 
 </head>
-<body onload=breadlist()>
+<body>
     <!-- header -->
     <header>
         <h1>은빈이네 빵집 🥐</h1>
@@ -26,32 +26,35 @@
             </div>
         </div>  
     </header>
-    <!-- main : except header -->
+    <!-- main : 헤더 제외 아래부분들 -->
     <main>
         <nav>
             <h2>종류</h2>
             <label class="nav__category">
-                <input type="checkbox"/>
+                <input id="all" type="checkbox" checked onclick="checked_all()"/>
                 <p>전체</p>
             </label>
             <label class="nav__category">
-                <input type="checkbox"/>
+                <input id="breads" type="checkbox"/>
                 <p>빵</p>
             </label>
             <label class="nav__category">
-                <input type="checkbox"/>
+                <input id="cakes" type="checkbox"/>
                 <p>케이크</p>
             </label>
             <label class="nav__category">
-                <input type="checkbox"/>
+                <input id="cookies" type="checkbox"/>
                 <p>쿠키</p>
             </label>
         </nav>
         <!-- section : container of cards -->
         <section id="cards"> 
+            <div id="section__category"> 
+                <!-- TagBoxs --> 이 자리 뭔데
+             </div>
             <!-- cards by js -->
         </section>
     <main>
-        <script src="main.js"></script>
+        <script type="module" src="main.js"></script>
 </body>
 </html>
