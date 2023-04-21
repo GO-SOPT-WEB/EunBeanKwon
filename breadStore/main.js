@@ -82,3 +82,17 @@ function deleteCards(filterType) {
   const articleList = document.querySelectorAll(`.${filterType}`);
   articleList.forEach(article => article.parentNode.removeChild(article));
 }
+
+// 체크 change에 따라 상태 변경 
+const checked = document.querySelectorAll(".category");
+let checkedId = "";
+let onCheckBox = "";
+
+checked.forEach(function(check) {
+  check.addEventListener('change', function() {
+    checkedId = this.id;
+    onCheckBox = this;
+    this.checked?showCards(checkedId):deleteCards(checkedId)
+    this.checked?addCategoryTag(checkedId):deleteCategoryTag(checkedId)
+  })
+})
