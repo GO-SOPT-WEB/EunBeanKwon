@@ -120,12 +120,12 @@ section > div {
 }
 
 #section__category > div {
+  height: fit-content;
   background-color: #2b7a78;
   color: #def2f1;
   margin-left: 0.5rem;
   padding: 0.5rem 1rem;
   border-radius: 2rem;
-  height: fit-content;
 }
 
 .typeTag {
@@ -164,10 +164,12 @@ section > div {
 }
 
 .card-modal-container {
-  visibility: hidden;
+  display: flex;
   z-index: 0;
-  width: 9rem;
-  height: 13rem;
+  width: 8rem;
+  height: 10rem;
+  visibility:hidden;
+  flex-direction: column;
   position: absolute;
   background-color: #def2f1;
   overflow: auto;
@@ -187,6 +189,7 @@ section > div {
 
 .card-modal-close {
   height: fit-content;
+  align-self: flex-end;
   font-size: 1rem;
   color: #17252a;
 }
