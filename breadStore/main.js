@@ -12,7 +12,6 @@ function initialPage() {
   showCards();
 }
 
-
 // 배열 필터링
 function filterBreadsByType(type) {
   const filteredBreads = breads.filter((bread) => bread.type === type);
@@ -48,6 +47,59 @@ const breadsList = showingList
 articleList.insertAdjacentHTML("beforeend", breadsList);
 }
 
+//카드들 삭제하기
+function deleteCards(filterType) {
+  const articleList = document.querySelectorAll(`.${filterType}`);
+  articleList.forEach(article => article.parentNode.removeChild(article));
+}
+
+// 카테고리 태그 만들기
+function addCategoryTag(addId) {
+  let resultList = ``
+  const categorySection = document.querySelector("#section__category");
+  resultList = `
+  <div id="tag-${addId}">${addId}<button class="typeTag" id="tag-btn-${addId}" type="button"> X</button></div>
+  `;
+  categorySection.insertAdjacentHTML("beforeend", resultList);
+  const btn = document.getElementById(`tag-btn-${addId}`);
+  btn.addEventListener("click",deleteTagByBtn(addId))
+
+}
+
+// 카테고리 태그 삭제하기
+function deleteCategoryTag(deleteId) {
+  const tagToDelete = document.querySelector(`#tag-${deleteId}`);
+  tagToDelete.remove();
+}
+
+// X 버튼으로 태그 삭제하기
+function deleteTagByBtn(addId) {
+const checked = document.querySelectorAll(".category");
+const btn = document.getElementById(`tag-btn-${addId}`);
+  btn.addEventListener('click', function() {
+  checked.forEach(function(checkbox) {
+    if (checkbox.checked && checkbox.value == addId) {
+      checkbox.checked = false;
+      btn.parentNode.remove();
+      deleteCards(addId);
+    }
+  });
+});
+}
+
+// 체크 change에 따라 상태 변경 
+const checked = document.querySelectorAll(".category");
+let checkedId = "";
+let onCheckBox = "";
+
+checked.forEach(function(check) {
+  check.addEventListener('change', function() {
+    checkedId = this.id;
+    onCheckBox = this;
+    this.checked?showCards(checkedId):deleteCards(checkedId)
+    this.checked?addCategoryTag(checkedId):deleteCategoryTag(checkedId)
+  })
+})
 
 // 모달 구현
 function openModal(event) {
@@ -68,44 +120,3 @@ function closeModal(event) {
 const modalCloseBtn = document.querySelectorAll(".card-modal-close")
 modalCloseBtn.forEach((closeBtn) => {
   closeBtn.addEventListener('click',closeModal) });
-
-
-// 카테고리 태그 만들기
-function addCategoryTag(addId) {
-  let resultList = ``
-  const categorySection = document.querySelector("#section__category");
-  resultList = `
-  <div id="tag-${addId}">${addId}<button class="typeTag" id="tag-btn-${addId}" type="button"> X</button></div>
-  `;
-  categorySection.insertAdjacentHTML("beforeend", resultList);
-  const btn = document.getElementById(`tag-btn-${addId}`);
-  btn.addEventListener("click",deleteTagByBtn(addId))
-}
-
-// 카테고리 태그 삭제하기
-function deleteCategoryTag(deleteId) {
-
-  const tagToDelete = document.querySelector(`#tag-${deleteId}`);
-  tagToDelete.remove();
-}
-
-
-//카드들 삭제하기
-function deleteCards(filterType) {
-  const articleList = document.querySelectorAll(`.${filterType}`);
-  articleList.forEach(article => article.parentNode.removeChild(article));
-}
-
-// 체크 change에 따라 상태 변경 
-const checked = document.querySelectorAll(".category");
-let checkedId = "";
-let onCheckBox = "";
-
-checked.forEach(function(check) {
-  check.addEventListener('change', function() {
-    checkedId = this.id;
-    onCheckBox = this;
-    this.checked?showCards(checkedId):deleteCards(checkedId)
-    this.checked?addCategoryTag(checkedId):deleteCategoryTag(checkedId)
-  })
-})
