@@ -36,6 +36,25 @@ articleList.insertAdjacentHTML("beforeend", breadsList);
 }
 
 
+// 모달 구현
+function openModal(event) {
+  const modalBoxContainer = event.target.parentNode;
+  const checkedModal = modalBoxContainer.querySelector(".card-modal-container")
+  checkedModal.style.visibility = "visible";
+}
+const modalOpenBtn = document.querySelectorAll(".section__tag-btn")
+modalOpenBtn.forEach((openBtn) => {
+  openBtn.addEventListener('click',openModal) });
+
+
+function closeModal(event) {
+  const modalBox = event.target.parentNode;
+  modalBox.style.visibility = "hidden";
+}
+
+const modalCloseBtn = document.querySelectorAll(".card-modal-close")
+modalCloseBtn.forEach((closeBtn) => {
+  closeBtn.addEventListener('click',closeModal) });
 
 
 
