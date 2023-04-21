@@ -59,3 +59,16 @@ checkBoxes.forEach(checkBox => {
     checkBox.addEventListener('click', countBox)
 })
 
+
+// 새 리스트 추가하는 모달 열고 항목 리턴
+function openModal(event) {
+    const modal = document.querySelector(".modal-background")
+    modal.style.display = "flex";
+    const parent = event.target.parentNode.parentNode
+    const ul = parent.children[1]
+}
+
+const addTodoBtn = document.querySelectorAll(".to-do__btn")
+addTodoBtn.forEach((addTodos) => {
+    addTodos.addEventListener('click', openModal)
+})
