@@ -15,6 +15,14 @@
     <title>TO_DO_MATE</title>
   </head>
   <body>
+    <!-- Modal -->
+    <div class ="modal-background">
+      <div class="modal-container">
+        <p>할 일 추가</p>
+        <input type="text" class="modal-input" placeholder="WHAT TO DO" />
+        <button type="submit"class="modal-submit">추가</button>
+      </div>
+    </div>
     <div class="full-container">
       <header>
         <p class="header__title">WEB TO DO MATE</p>
@@ -22,323 +30,25 @@
       </header>
       <main>
         <section class="calc__container">
-          <article class="day">
-            <p class="calc__week-title">월</p>
-            <div class="calc__do-num-title">
-              <img src="./imgs/heart.png" alt="bgimg_heart" />
-              <p>5</p>
-            </div>
-            <p class="calc__day-num-title">1</p>
-          </article>
-          <article class="day">
-            <p class="calc__week-title">월</p>
-            <div class="calc__do-num-title">
-              <img src="./imgs/heart.png" alt="bgimg_heart" />
-              <p>5</p>
-            </div>
-            <p class="calc__day-num-title">1</p>
-          </article>
-          <article class="day">
-            <p class="calc__week-title">월</p>
-            <div class="calc__do-num-title">
-              <img src="./imgs/heart.png" alt="bgimg_heart" />
-              <p>5</p>
-            </div>
-            <p class="calc__day-num-title">1</p>
-          </article>
-          <article class="day">
-            <p class="calc__week-title">월</p>
-            <div class="calc__do-num-title">
-              <img src="./imgs/heart.png" alt="bgimg_heart" />
-              <p>5</p>
-            </div>
-            <p class="calc__day-num-title">1</p>
-          </article>
-          <article class="day">
-            <p class="calc__week-title">월</p>
-            <div class="calc__do-num-title">
-              <img src="./imgs/heart.png" alt="bgimg_heart" />
-              <p>5</p>
-            </div>
-            <p class="calc__day-num-title">1</p>
-          </article>
-          <article class="day">
-            <p class="calc__week-title">월</p>
-            <div class="calc__do-num-title">
-              <img src="./imgs/heart.png" alt="bgimg_heart" />
-              <p>5</p>
-            </div>
-            <p class="calc__day-num-title">1</p>
-          </article>
-          <article class="day">
-            <p class="calc__week-title">월</p>
-            <div class="calc__do-num-title">
-              <img src="./imgs/heart.png" alt="bgimg_heart" />
-              <p>5</p>
-            </div>
-            <p class="calc__day-num-title">1</p>
-          </article>
+          <!-- TodoNum by js -->
         </section>
 
         <section class="to-dos-container">
-          <article class="to-dos">
-            <p class="to-do__title">
-              😻💪
-              <button type="button" class="to-do__btn">+</button>
-            </p>
-            <ul>
-              <div class="to-do__list-container">
-                <button type="button" class="to-do__list-btn">
-                  <img
-                    src="./imgs/white-heaert.jpeg"
-                    alt="bgimg_heart"
-                    class="to-do__list-img"
-                  />
-                </button>
-                <li class="to-do__list">수건 빨래</li>
-              </div>
-              <div class="to-do__list-container">
-                <button type="button" class="to-do__list-btn">
-                  <img
-                    src="./imgs/white-heaert.jpeg"
-                    alt="bgimg_heart"
-                    class="to-do__list-img"
-                  />
-                </button>
-                <li class="to-do__list">가스비 송금</li>
-              </div>
-              <div class="to-do__list-container">
-                <button type="button" class="to-do__list-btn">
-                  <img
-                    src="./imgs/white-heaert.jpeg"
-                    alt="bgimg_heart"
-                    class="to-do__list-img"
-                  />
-                </button>
-                <li class="to-do__list">분리수거</li>
-              </div>
-              <div class="to-do__list-container">
-                <button type="button" class="to-do__list-btn">
-                  <img
-                    src="./imgs/white-heaert.jpeg"
-                    alt="bgimg_heart"
-                    class="to-do__list-img"
-                  />
-                </button>
-                <li class="to-do__list">책 반납하기</li>
-              </div>
-            </ul>
-          </article>
-          <article class="to-dos">
-            <p class="to-do__title">
-              운동
-              <button type="button" class="to-do__btn">+</button>
-            </p>
-            <ul>
-              <div class="to-do__list-container">
-                <button type="button" class="to-do__list-btn">
-                  <img
-                    src="./imgs/white-heaert.jpeg"
-                    alt="bgimg_heart"
-                    class="to-do__list-img"
-                  />
-                </button>
-                <li class="to-do__list">수영 🏊‍♀️</li>
-              </div>
-              <div class="to-do__list-container">
-                <button type="button" class="to-do__list-btn">
-                  <img
-                    src="./imgs/white-heaert.jpeg"
-                    alt="bgimg_heart"
-                    class="to-do__list-img"
-                  />
-                </button>
-                <li class="to-do__list">런데이 4일차</li>
-              </div>
-              <div class="to-do__list-container">
-                <button type="button" class="to-do__list-btn">
-                  <img
-                    src="./imgs/white-heaert.jpeg"
-                    alt="bgimg_heart"
-                    class="to-do__list-img"
-                  />
-                </button>
-                <li class="to-do__list">숨쉬기</li>
-              </div>
-            </ul>
-          </article>
-          <article class="to-dos">
-            <p class="to-do__title">
-              SOPT
-              <button type="button" class="to-do__btn">+</button>
-            </p>
-            <ul>
-              <div class="to-do__list-container">
-                <button type="button" class="to-do__list-btn">
-                  <img
-                    src="./imgs/white-heaert.jpeg"
-                    alt="bgimg_heart"
-                    class="to-do__list-img"
-                  />
-                </button>
-                <li class="to-do__list">[부할] 기사 정리</li>
-              </div>
-              <div class="to-do__list-container">
-                <button type="button" class="to-do__list-btn">
-                  <img
-                    src="./imgs/white-heaert.jpeg"
-                    alt="bgimg_heart"
-                    class="to-do__list-img"
-                  />
-                </button>
-                <li class="to-do__list">[웹스] 00:00 킥 오프</li>
-              </div>
-            </ul>
-          </article>
-          <article class="to-dos">
-            <p class="to-do__title">
-              개인 과제
-              <button type="button" class="to-do__btn">+</button>
-            </p>
-            <ul>
-              <div class="to-do__list-container">
-                <button type="button" class="to-do__list-btn">
-                  <img
-                    src="./imgs/white-heaert.jpeg"
-                    alt="bgimg_heart"
-                    class="to-do__list-img"
-                  />
-                </button>
-                <li class="to-do__list">소분설 ch03 녹강</li>
-              </div>
-              <div class="to-do__list-container">
-                <button type="button" class="to-do__list-btn">
-                  <img
-                    src="./imgs/white-heaert.jpeg"
-                    alt="bgimg_heart"
-                    class="to-do__list-img"
-                  />
-                </button>
-                <li class="to-do__list">정보자료조직론 퀴즈</li>
-              </div>
-              <div class="to-do__list-container">
-                <button type="button" class="to-do__list-btn">
-                  <img
-                    src="./imgs/white-heaert.jpeg"
-                    alt="bgimg_heart"
-                    class="to-do__list-img"
-                  />
-                </button>
-                <li class="to-do__list">도서관경영 퀴즈</li>
-              </div>
-              <div class="to-do__list-container">
-                <button type="button" class="to-do__list-btn">
-                  <img
-                    src="./imgs/white-heaert.jpeg"
-                    alt="bgimg_heart"
-                    class="to-do__list-img"
-                  />
-                </button>
-                <li class="to-do__list">DES OT</li>
-              </div>
-              <div class="to-do__list-container">
-                <button type="button" class="to-do__list-btn">
-                  <img
-                    src="./imgs/white-heaert.jpeg"
-                    alt="bgimg_heart"
-                    class="to-do__list-img"
-                  />
-                </button>
-                <li class="to-do__list">웹프 복습</li>
-              </div>
-            </ul>
-          </article>
-          <article class="to-dos">
-            <p class="to-do__title">
-              🥐
-              <button type="button" class="to-do__btn">+</button>
-            </p>
-            <ul>
-              <div class="to-do__list-container">
-                <button type="button" class="to-do__list-btn">
-                  <img
-                    src="./imgs/white-heaert.jpeg"
-                    alt="bgimg_heart"
-                    class="to-do__list-img"
-                  />
-                </button>
-                <li class="to-do__list">아침 먹기</li>
-              </div>
-              <div class="to-do__list-container">
-                <button type="button" class="to-do__list-btn">
-                  <img
-                    src="./imgs/white-heaert.jpeg"
-                    alt="bgimg_heart"
-                    class="to-do__list-img"
-                  />
-                </button>
-                <li class="to-do__list">점심 먹기</li>
-              </div>
-              <div class="to-do__list-container">
-                <button type="button" class="to-do__list-btn">
-                  <img
-                    src="./imgs/white-heaert.jpeg"
-                    alt="bgimg_heart"
-                    class="to-do__list-img"
-                  />
-                </button>
-                <li class="to-do__list">저녁 먹기</li>
-              </div>
-            </ul>
-          </article>
-          <article class="to-dos">
-            <p class="to-do__title">
-              💪
-              <button type="button" class="to-do__btn">+</button>
-            </p>
-            <ul>
-              <div class="to-do__list-container">
-                <button type="button" class="to-do__list-btn">
-                  <img
-                    src="./imgs/white-heaert.jpeg"
-                    alt="bgimg_heart"
-                    class="to-do__list-img"
-                  />
-                </button>
-                <li class="to-do__list">가족 단톡 안부 연락</li>
-              </div>
-            </ul>
-          </article>
-          <article class="to-dos">
-            <p class="to-do__title">
-              👀
-              <button type="button" class="to-do__btn">+</button>
-            </p>
-            <ul>
-              <div class="to-do__list-container">
-                <button type="button" class="to-do__list-btn">
-                  <img
-                    src="./imgs/white-heaert.jpeg"
-                    alt="bgimg_heart"
-                    class="to-do__list-img"
-                  />
-                </button>
-                <li class="to-do__list">길복순!!🗡</li>
-              </div>
-            </ul>
-          </article>
+          <!-- Todos by js -->
         </section>
       </main>
       <footer>
-        <button type="button" class="footer__btn">
-          <img class="footer__img" src="imgs/home.png" alt="home" />
+        <button type="button" class="footer__btn" id="calButton">
+          <img class="footer__img" src="imgs/home.png" alt="calendar" />
           <p>달력</p>
         </button>
-        <button type="button" class="footer__btn">
-          <img class="footer__img" src="imgs/person.png" alt="home" />
+        <button type="button" class="footer__btn" id="myButton">
+          <img class="footer__img" src="imgs/person.png" alt="my" />
           <p>MY</p>
         </button>
       </footer>
     </div>
+
+    <script type="module" src="main.js"></script>
   </body>
 </html>
