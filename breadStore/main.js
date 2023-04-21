@@ -71,8 +71,14 @@ function addCategoryTag(addId) {
 
 // 카테고리 태그 삭제하기
 function deleteCategoryTag(deleteId) {
-  
+
   const tagToDelete = document.querySelector(`#tag-${deleteId}`);
   tagToDelete.remove();
 }
 
+
+//카드들 삭제하기
+function deleteCards(filterType) {
+  const articleList = document.querySelectorAll(`.${filterType}`);
+  articleList.forEach(article => article.parentNode.removeChild(article));
+}
