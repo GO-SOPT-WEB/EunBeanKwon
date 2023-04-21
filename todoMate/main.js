@@ -72,3 +72,31 @@ const addTodoBtn = document.querySelectorAll(".to-do__btn")
 addTodoBtn.forEach((addTodos) => {
     addTodos.addEventListener('click', openModal)
 })
+
+
+
+
+// submit NewTodos
+function submitTodos() {
+    const modal = document.querySelector(".modal-background")
+    modal.style.display = "none";
+
+    const newTodo = document.querySelector(".modal-input").value
+
+    // 보여지게
+    const newTodoParent = document.querySelector(".to-dos > ul")
+    const newTodoList = `
+    <div class="to-do__list-container">
+        <input type="checkbox" class="to-do__list-btn">
+    <label for="check11"></label>
+        <li class="to-do__list">${newTodo}</li>
+    </div>
+    `
+    newTodoParent.insertAdjacentHTML("beforeend", newTodoList);
+
+    document.querySelector(".modal-input").value = '';
+}
+
+const submitBtn = document.querySelector(".modal-submit");
+submitBtn.addEventListener('click',submitTodos)
+
