@@ -57,4 +57,15 @@ modalCloseBtn.forEach((closeBtn) => {
   closeBtn.addEventListener('click',closeModal) });
 
 
+// 카테고리 태그 만들기
+function addCategoryTag(addId) {
+  let resultList = ``
+  const categorySection = document.querySelector("#section__category");
+  resultList = `
+  <div id="tag-${addId}">${addId}<button class="typeTag" id="tag-btn-${addId}" type="button"> X</button></div>
+  `;
+  categorySection.insertAdjacentHTML("beforeend", resultList);
+  const btn = document.getElementById(`tag-btn-${addId}`);
+  btn.addEventListener("click",deleteTagByBtn(addId))
+}
 
