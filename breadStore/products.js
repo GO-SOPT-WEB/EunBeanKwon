@@ -66,7 +66,7 @@ export const breads = [
   {
     id: 9,
     name: "로투스 치즈케이크",
-    type: "cake",
+    type: "cakes",
     src: "Bread9.png",
     hashtags: ["해시", "태그", "입니다", "너무 많다"],
   },
