@@ -45,3 +45,10 @@ const toDosList = toDos
 `;
   }).join(" ");
   toDosSection.insertAdjacentHTML("beforeend", toDosList);
+
+  // 미완료 할 일 개수 계산
+const countBox = () => {
+    const uncheckedBoxes = checkBoxes.filter(checkBoxes => !checkBoxes.checked);
+    const CalcNum = document.querySelector(".day:nth-child(6) .calc__done-num")
+    CalcNum.innerHTML=`${uncheckedBoxes.length}`
+}
