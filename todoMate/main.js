@@ -100,3 +100,13 @@ function submitTodos() {
 const submitBtn = document.querySelector(".modal-submit");
 submitBtn.addEventListener('click',submitTodos)
 
+
+
+const calButton = document.querySelector("#calButton");
+calButton.addEventListener('click', () =>{
+    window.location.href='/' 
+})
+const myButton =document.querySelector("#myButton");
+myButton.addEventListener('click', () =>{
+    window.location.href='/mycategory' 
+})
