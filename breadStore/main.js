@@ -71,6 +71,8 @@ function addCategoryTag(addId) {
 
 // 카테고리 태그 삭제하기
 function deleteCategoryTag(deleteId) {
+  
   const tagToDelete = document.querySelector(`#tag-${deleteId}`);
   tagToDelete.remove();
 }
+
