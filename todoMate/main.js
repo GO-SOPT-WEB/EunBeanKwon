@@ -52,3 +52,10 @@ const countBox = () => {
     const CalcNum = document.querySelector(".day:nth-child(6) .calc__done-num")
     CalcNum.innerHTML=`${uncheckedBoxes.length}`
 }
+
+// CheckBoxes에 이벤트 리스너 담기
+const checkBoxes = Array.from(document.querySelectorAll(".to-do__list-btn"));
+checkBoxes.forEach(checkBox => {
+    checkBox.addEventListener('click', countBox)
+})
+
