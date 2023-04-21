@@ -116,6 +116,7 @@ section > div {
 
 #section__category {
   display: flex;
+  height: auto;
 }
 
 #section__category > div {
@@ -124,9 +125,15 @@ section > div {
   margin-left: 0.5rem;
   padding: 0.5rem 1rem;
   border-radius: 2rem;
+  height: fit-content;
 }
 
-.section__card {
+.typeTag {
+  margin-left: 0.5rem;
+}
+
+/* .section__card  */
+.breads, .cakes, .cookies {
   display: flex;
   width: 12rem;
   flex-direction: column;
@@ -139,18 +146,19 @@ section > div {
   box-shadow: 0.3rem 0.3rem #2b7a78;
 }
 
-.section__card h3 {
+.breads  h3 , .cakes  h3 , .cookies  h3 {
   margin: 0.5rem;
   font-weight: 600;
   font-size: 1.3rem;
 }
 
-.section__card > div {
-  display: flex;
+.breads > div, .cakes > div, .cookies  > div {
+  display: flex; 
 }
-.section__card button {
-  background-color: #17252a;
-  color: #def2f1;
+.breads button, .cakes button, .cookies button {
+  color: #17252a;
+  font-size: 1rem;
+  font-weight: bolder;
   padding: 0rem 0.3rem;
   margin-left: 0.4rem;
 }
