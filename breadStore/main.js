@@ -1,5 +1,18 @@
 import { breads } from "./products.js";
 
+window.onload=initialPage();
+
+// onload
+function initialPage() {
+  const checked = document.querySelectorAll(".category");
+  checked.forEach(function(checkbox) {
+    checkbox.checked = true;
+    addCategoryTag(checkbox.id);
+  });
+  showCards();
+}
+
+
 // 배열 필터링
 function filterBreadsByType(type) {
   const filteredBreads = breads.filter((bread) => bread.type === type);
