@@ -27,7 +27,7 @@ body {
   background-color: rgba(0, 0, 0, 0.5);
 }
 
-.modal-container {
+.modal-background > form {
   display: flex;
   z-index: 100;
   width: 15rem;
@@ -39,14 +39,9 @@ body {
   border-radius: 2rem;
 }
 
-.modal-container > p {
-  margin-bottom: 1rem;
-}
-
 .modal-submit {
   width: 3rem;
-  height: 1.5rem;
-  margin: 1rem;
+  margin-top: 1rem;
   border-radius: 0.3rem;
   background-color: #d4a373;
   color: #fefae0;
@@ -186,11 +181,14 @@ input[type=checkbox] + label {
   width: 24px;
   height: 24px;
   top:0rem;
-  background: url('./imgs/whiteHeart.png')left/22px no-repeat; ;
+  background: url('./imgs/whiteHeart.png')left/22px no-repeat; 
+  transition: all 1s;;
 }
 
 input[type=checkbox]:checked + label {
-  background-image: url('./imgs/heartDone.png'); }
+  background-image: url('./imgs/heartDone.png'); 
+  transition: all 1s;
+}
 
 .to-do__list-container > input {
   margin-right: 0.4rem;
