@@ -5,7 +5,7 @@ export const toDos = [{
       {
         "id": 1,
         "title": "수건 빨래",
-        "done": false
+        "done": true
       },
       {
         "id": 2,
@@ -15,7 +15,7 @@ export const toDos = [{
       {
         "id": 3,
         "title": "분리수거",
-        "done": false
+        "done": true
       },
       {
         "id": 4,

@@ -22,7 +22,7 @@ export const calend = [{
 },{
     "day": "금",
     "date": 21, 
-    "completed": 5
+    "completed": 7
 },{
     "day": "토",
     "date": 22, 

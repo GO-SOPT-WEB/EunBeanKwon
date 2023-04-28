@@ -25,7 +25,7 @@ const toDosSection = document.querySelector(".to-dos-container");
 const toDosList = toDos
   .map((toDoLi) => {
     const toDoThings = toDoLi.tasks
-      .map((Things) =>
+      .map((Things, index) =>
       `<div class="to-do__list-container">
       <input type="checkbox" id="check${toDoLi.id}${Things.id}" class="to-do__list-btn" ${Things.done ? "checked" : ""} />
       <label for="check${toDoLi.id}${Things.id}">
@@ -47,10 +47,10 @@ const toDosList = toDos
   toDosSection.insertAdjacentHTML("beforeend", toDosList);
 
   // 미완료 할 일 개수 계산
-const countBox = () => {
-    const uncheckedBoxes = checkBoxes.filter(checkBoxes => !checkBoxes.checked);
-    const CalcNum = document.querySelector(".day:nth-child(6) .calc__done-num")
-    CalcNum.innerHTML=`${uncheckedBoxes.length}`
+  const countBox = () => {
+  const uncheckedBoxes = checkBoxes.filter(checkBoxes => !checkBoxes.checked);
+  const CalcNum = document.querySelector(".day:nth-child(6) .calc__done-num")
+  CalcNum.innerHTML=`${uncheckedBoxes.length}`
 }
 
 // CheckBoxes에 이벤트 리스너 담기
