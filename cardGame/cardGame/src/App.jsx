@@ -1,12 +1,18 @@
-import './App.css'
+import Header from './components/header';
+import { createGlobalStyle } from 'styled-components'
+import reset from 'styled-reset'
 
-function App() {
+
+const GlobalStyle = createGlobalStyle`
+    ${reset}
+`;
+
+const App = () => {
 
   return (
     <>
-    <div> 
-      <p> init </p>
-    </div>
+    <GlobalStyle />
+    <Header />
     </>
   )
 }
