@@ -47,6 +47,13 @@ const CardContainer = ({cardsNum, }) => {
   }, [firstCard, secondCard]);
 
 
+  // reset Choice
+  const resetTurn = () => {
+    setFirstCard(null);
+    setSecondCard(null);
+    setDisabled(false);
+  }
+
 
   return (
     <StCardContainer>
