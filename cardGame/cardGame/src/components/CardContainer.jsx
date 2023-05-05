@@ -13,7 +13,7 @@ const CardContainer = ({cardsNum, }) => {
   const [disabled, setDisabled] = useState(false);
   const [isOpen, setIsOpen] = useState(Array(cardsNum.length).fill(false));
 
-
+  
 
   const cardClicked = (card) => {
     firstCard? setSecondCard(card): setFirstCard(card);
@@ -23,6 +23,28 @@ const CardContainer = ({cardsNum, }) => {
 }
 
 
+  //선택된 카드들 비교
+  useEffect(() => {
+    console.log(isOpen)
+    if (firstCard && secondCard) {
+      setDisabled(true);
+      if (firstCard.src === secondCard.src) {
+        setCards((prevCards) => {
+          return prevCards.map((card) => {
+            if (card.src === firstCard.src) {
+              return { ...card, matched: true };
+            } else {
+              return card;
+            }
+          });
+        });
+
+        resetTurn();
+      } else {
+        setTimeout(() => resetTurn(), 500);
+      }
+    }
+  }, [firstCard, secondCard]);
 
 
 
