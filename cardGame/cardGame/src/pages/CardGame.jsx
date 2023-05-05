@@ -16,24 +16,6 @@ import {
 
 const CardGame = () => {
 
-  const [scores, setScore]=useState(0);
-
-    // 버튼 클릭 시 색 바뀌게
-  const [cardsNum, setCardsNum] = useState(EasyVersion)
-  const [nowLevel, setNowLevel] = useState("EASY")
-
-  const ClickedLv = (e) => {
-    setNowLevel(e.target.value)
-    switch (e.target.value) {
-      case 'EASY' :
-        return setCardsNum(EasyVersion)
-      case 'NORMAL' :
-        return setCardsNum(NormalVersion)
-      case 'HARD' :
-        return setCardsNum(HardVersion)
-      }
-    }
-
   return (
     <>
     {/* <Modal /> */}
