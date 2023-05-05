@@ -3,7 +3,11 @@ import QuestionBox from "../assets/imgs/QuestionBox.png"
 
 const SingleCard = ({card, cardClicked, flipped, disabled, isOpen}) => {
 
-
+    const handleClick = () => {
+        if (!disabled) {
+            cardClicked(card);
+        }
+    }
     return (
     <>
         <OverlapCard
