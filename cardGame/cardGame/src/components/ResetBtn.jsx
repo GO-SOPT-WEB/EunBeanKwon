@@ -19,6 +19,7 @@ const StButton = styled.button`
   position: fixed;
   top: 4rem;
   right: 4rem;
+  z-index: 999;
 
   background-color: ${({theme}) => theme.color.blue};
   border-radius: 1rem;
