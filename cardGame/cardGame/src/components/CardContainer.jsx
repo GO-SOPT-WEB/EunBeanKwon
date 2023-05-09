@@ -60,10 +60,10 @@ const loadCards = () => {
 
   return (
     <StCardContainer>
-      {cards.map((card,index) => {
+      {cards.map((card) => {
         return ( 
           <SingleCard 
-            key={`${card.id}${index}`}
+            key={card.id}
             card={card}
             cardClicked={cardClicked}
             flipped={card === firstCard || card === secondCard || card.matched }
