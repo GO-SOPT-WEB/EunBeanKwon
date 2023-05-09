@@ -1,12 +1,12 @@
 import styled from "styled-components";
 import SingleCard from "./SingleCard";
 
-const CardContainer = ({cards, cardClicked, firstCard, secondCard, disabled}) => {
+const CardContainer = ({cardsNum, cardClicked, firstCard, secondCard, disabled}) => {
 
   return (
     <>
     <StCardContainer>
-      {cards.map((card) => {
+      {cardsNum.map((card) => {
         return ( 
           <SingleCard 
             key={card.id}
@@ -35,10 +35,3 @@ justify-content: center;
 `
 
 
-const StScore = styled.div`
-  color:${({theme}) => theme.color.green};
-  font-size: 2.6rem; 
-  text-align: center;
-  font-weight: 600;
-  margin-top: 1.5rem;
-`

@@ -1,9 +1,13 @@
 import styled from "styled-components"
 
+
+
 const ResetBtn = () => {
   return (
     <StButton
       type="button"
+      // 새로고침으로 카드 배열 전부 바꾸기
+      onClick={()=> location.reload()}
     >
       Reset
     </StButton>

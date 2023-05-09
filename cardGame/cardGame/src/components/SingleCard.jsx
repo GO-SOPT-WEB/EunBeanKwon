@@ -1,19 +1,26 @@
 import styled from "styled-components";
 import QuestionBox from "../assets/imgs/QuestionBox.png"
+import { useEffect } from "react";
 
-const SingleCard = ({card, cardClicked, flipped, disabled, isOpen}) => {
+const SingleCard = ({card, cardClicked, flipped, disabled}) => {
 
     const handleClick = () => {
         if (!disabled) {
             cardClicked(card);
         }
     }
+
+
+useEffect(()=> {
+}, [card])
+
     return (
     <>
         <OverlapCard
-            className={flipped ? "flipped":""}>
+            className={flipped ? "flipped":""}> 
             <StFrontCard>
                 <div >
+                    <p> {flipped} </p>
                     <img
                         src={card.src}
                         alt={card.alt}
@@ -23,6 +30,7 @@ const SingleCard = ({card, cardClicked, flipped, disabled, isOpen}) => {
             </StFrontCard>
             <StBackCard>
                 <div>
+                    <p> {flipped} </p>
                     <img 
                         onClick={handleClick}
                         src={QuestionBox}

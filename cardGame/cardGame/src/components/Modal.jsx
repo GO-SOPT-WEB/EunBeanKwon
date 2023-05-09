@@ -1,30 +1,11 @@
-import React, { useEffect, useState } from 'react'
 import Portal from "./Portal";
 import styled from 'styled-components';
 
-const Modal = () => {
-    const [modalOn, setModalOn] = useState(true);
+const Modal = ({modalOn, setModalOn}) => {
 
-    //  모달 창이 띄워지면 스크롤 금지
-    useEffect(() => {
-        //현재 위치에 고정
-        document.body.style.cssText = `
-            position: fixed;
-            top: -${window.scrollY}rem;
-            overflow-y: scroll;
-            width: 100%;
-        `;
-        return () => {
-            //  모달 사라지지면 style 코드 지우기
-            const scrollY = document.body.style.top;
-            document.body.style.cssText = '';
-            window.scrollTo(0, parseInt(scrollY || '0', 10) * -1);
-        };
-    }, []);
-
-    const modalClose = () => {
-        setModalOn(false);
-    }
+  const modalClose = () => {
+    setModalOn(false);
+}
 
     return (
         <>
@@ -43,7 +24,7 @@ const Modal = () => {
 export default Modal
 
 const Background = styled.div`
-    display: none;
+    display: ${(props) => (props.modalOn ? 'flex':'none')};
     justify-content: center;
     align-items: center;
     position: fixed;
@@ -74,8 +55,7 @@ const StModal = styled.div`
 `
 
 const StCloseBtn = styled.button`
-    background-color: ${({theme}) => theme.color.deepBlue};
-    border-radius: 10rem;
+ display : ${(props) => (props.modalOn ? "flex" : "none")};    border-radius: 10rem;
     padding: 0rem 2rem;
     height: 5vh;
     color: ${({theme}) => theme.color.white};

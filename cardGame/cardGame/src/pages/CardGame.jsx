@@ -16,13 +16,13 @@ import {
 
 const CardGame = () => {
 
-    // 버튼 클릭 시 색 바뀌게
+
   const [cardsNum, setCardsNum] = useState(EasyVersion)
   const [nowLevel, setNowLevel] = useState("EASY")
 
-
   const [score, setScore] = useState(0);
-  const [cards, setCards] = useState([]);
+
+  const [modalOn, setModalOn] = useState(false);
 
   const [firstCard, setFirstCard] = useState(null);
   const [secondCard, setSecondCard] = useState(null);
@@ -30,7 +30,18 @@ const CardGame = () => {
   const [disabled, setDisabled] = useState(false);
 
 
+  useEffect(() => {
+    if (score === cardsNum.length/2) {
+      console.log("matched!")
+      setModalOn(true); //이거 바로 안바뀌는 거 수정 => modal 도 바로 안열림
+      console.log(modalOn)
+    }
+  }, [score,setModalOn]);
+
+
+// 레벨 버튼 클릭 시 카드 수 변경
   const ClickedLv = (e) => {
+    setScore(0)
     setNowLevel(e.target.value)
     switch (e.target.value) {
       case 'EASY' :
@@ -42,38 +53,24 @@ const CardGame = () => {
       }
     }
 
-
-
+    // 카드 클릭시 첫번째로 클릭한 카드, 두번째로 클릭한 카드 넣어주기
     const cardClicked = (card) => {
       firstCard? setSecondCard(card): setFirstCard(card);
   }
-  
-  
 
-    const loadCards = () => {
-      setCards(cardsNum);
-      setFirstCard(null);
-      setSecondCard(null);
-    }
-
-
-  useEffect(() => {
-    loadCards();
-  }, [])
-
-      // 클릭된 카드들 점부 초기화
+  // 클릭된 카드들 점부 초기화
   const resetTurn = () => {
     setFirstCard(null);
     setSecondCard(null);
     setDisabled(false);
   }
 
-  //선택된 카드들 비교
+  //선택된 카드들 비교해서 같으면 matched 값 부여
   useEffect(() => {
     if (firstCard && secondCard) {
       setDisabled(true);
       if (firstCard.src === secondCard.src) {
-        setCards((prevCards) => {
+        setCardsNum((prevCards) => {
           return prevCards.map((card) => {
             if (card.src === firstCard.src) {
               setScore(score + 1);
@@ -93,10 +90,11 @@ const CardGame = () => {
 
   return (
     <>
-    {/* <Modal /> */}
+    <Modal modalOn={modalOn} setModalOn={setModalOn} />
     <ResetBtn />
     <StHeader>
         <p> Match the MARIO! 🍄 </p>
+        <StScore> {score}/{cardsNum.length/2} </StScore>
     </StHeader>
     <StGameContainer>
       <StLevenContainer>
@@ -114,7 +112,7 @@ const CardGame = () => {
       })}
       </StLevenContainer>
         <CardContainer 
-          cards={cards}
+          cardsNum={cardsNum}
           cardClicked={cardClicked}
           firstCard={firstCard}
           secondCard={secondCard}
@@ -171,4 +169,12 @@ const StLevelBtn = styled.button`
         background-color: ${({theme}) => theme.color.blue};
         box-shadow: 0.2rem 0.2rem ${({theme}) => theme.color.yellow};
     }
+`
+
+const StScore = styled.div`
+  color:${({theme}) => theme.color.green};
+  font-size: 2.6rem; 
+  text-align: center;
+  font-weight: 600;
+  margin-top: 1.5rem;
 `
