@@ -16,7 +16,12 @@ const CardContainer = ({cardsNum}) => {
     firstCard? setSecondCard(card): setFirstCard(card);
 }
 
-// loadCards
+const loadCards = () => {
+  setCards(cardsNum);
+  setFirstCard(null);
+  setSecondCard(null);
+}
+
 
   //선택된 카드들 비교
   useEffect(() => {
@@ -49,7 +54,9 @@ const CardContainer = ({cardsNum}) => {
     setDisabled(false);
   }
 
-
+  useEffect(() => {
+    loadCards();
+  }, [])
 
   return (
     <StCardContainer>
