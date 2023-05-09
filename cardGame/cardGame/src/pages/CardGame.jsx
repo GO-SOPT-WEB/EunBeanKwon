@@ -1,5 +1,5 @@
 import styled from "styled-components"
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import CardContainer from "../components/CardContainer";
 import ResetBtn from "../components/ResetBtn";
 import { Level } from "../data/level";
@@ -16,11 +16,19 @@ import {
 
 const CardGame = () => {
 
-  const [scores, setScore]=useState(0);
-
     // 버튼 클릭 시 색 바뀌게
   const [cardsNum, setCardsNum] = useState(EasyVersion)
   const [nowLevel, setNowLevel] = useState("EASY")
+
+
+  const [score, setScore] = useState(0);
+  const [cards, setCards] = useState([]);
+
+  const [firstCard, setFirstCard] = useState(null);
+  const [secondCard, setSecondCard] = useState(null);
+
+  const [disabled, setDisabled] = useState(false);
+
 
   const ClickedLv = (e) => {
     setNowLevel(e.target.value)
@@ -34,13 +42,61 @@ const CardGame = () => {
       }
     }
 
+
+
+    const cardClicked = (card) => {
+      firstCard? setSecondCard(card): setFirstCard(card);
+  }
+  
+  
+
+    const loadCards = () => {
+      setCards(cardsNum);
+      setFirstCard(null);
+      setSecondCard(null);
+    }
+
+
+  useEffect(() => {
+    loadCards();
+  }, [])
+
+      // 클릭된 카드들 점부 초기화
+  const resetTurn = () => {
+    setFirstCard(null);
+    setSecondCard(null);
+    setDisabled(false);
+  }
+
+  //선택된 카드들 비교
+  useEffect(() => {
+    if (firstCard && secondCard) {
+      setDisabled(true);
+      if (firstCard.src === secondCard.src) {
+        setCards((prevCards) => {
+          return prevCards.map((card) => {
+            if (card.src === firstCard.src) {
+              setScore(score + 1);
+              return { ...card, matched: true };
+            } else {
+              return card;
+            }
+          });
+        });
+
+        resetTurn();
+      } else {
+        setTimeout(() => resetTurn(), 500);
+      }
+    }
+  }, [firstCard, secondCard]);
+
   return (
     <>
     {/* <Modal /> */}
     <ResetBtn />
     <StHeader>
         <p> Match the MARIO! 🍄 </p>
-        <StScore> 1/5 </StScore>
     </StHeader>
     <StGameContainer>
       <StLevenContainer>
@@ -58,7 +114,11 @@ const CardGame = () => {
       })}
       </StLevenContainer>
         <CardContainer 
-          cardsNum={cardsNum} />
+          cards={cards}
+          cardClicked={cardClicked}
+          firstCard={firstCard}
+          secondCard={secondCard}
+          disabled={disabled} />
     </StGameContainer>
     </>
   )
@@ -91,13 +151,6 @@ const StGameContainer = styled.section`
     background-color: ${({theme}) => theme.color.deepBlue};
 `
 
-const StScore = styled.div`
-  color:${({theme}) => theme.color.green};
-  font-size: 2.6rem; 
-  text-align: center;
-  font-weight: 600;
-  margin-top: 1.5rem;
-`
 const StLevenContainer = styled.nav`
     display: flex;
     justify-content: center;
