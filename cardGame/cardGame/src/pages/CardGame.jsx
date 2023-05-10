@@ -133,9 +133,9 @@ export default CardGame;
 
 const StHeader = styled.header`
     display: flex;
+    height: 20vh;
     flex-direction: column;
     justify-content: center;
-    height: 20vh;
 
     > p {
     color:${({theme}) => theme.color.red};
@@ -164,10 +164,11 @@ const StLevenContainer = styled.nav`
 
 
 const StLevelBtn = styled.button`
-    background-color:${({theme}) => theme.color.yellow};
     width: 5rem;
-    padding: 1rem 1rem;
     margin: 1rem 1rem;
+    background-color:${({theme}) => theme.color.yellow};
+    padding: 1rem 1rem;
+    
     text-align: center;
     border-radius: 1rem;
 

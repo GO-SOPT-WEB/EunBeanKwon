@@ -94,10 +94,10 @@ const StFrontCard = styled.div `
 `
 
 const StBackCard = styled.div `
+    display: flex;
     width: 12rem;
     height: 18rem;
     position: absolute;
-    display: flex;
     justify-content: center;
 
     border-radius: 2rem;
@@ -110,16 +110,18 @@ const StBackCard = styled.div `
 
     div {
         display: flex;
-        background-color: ${({theme}) => theme.color.blue};
-        border-radius: 2rem;
         width: 9rem;
         height: 14rem;
+
+        background-color: ${({theme}) => theme.color.blue};
+        
+        border-radius: 2rem;
         margin-top: 2rem;
         
     }
      img {
         width: 7rem;
-        object-fit: contain;
         margin: 0 auto;
+        object-fit: contain;
 }
 `

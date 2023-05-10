@@ -17,13 +17,13 @@ const ResetBtn = () => {
 export default ResetBtn
 
 const StButton = styled.button`
-  width: 8rem;
-  height: 4rem;
+    z-index: 999;
+    width: 8rem;
+    height: 4rem;
 
-  position: fixed;
-  top: 4rem;
-  right: 4rem;
-  z-index: 999;
+    position: fixed;
+    top: 4rem;
+    right: 4rem;
 
   background-color: ${({theme}) => theme.color.blue};
   border-radius: 1rem;
