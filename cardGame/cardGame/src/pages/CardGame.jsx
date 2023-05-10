@@ -1,4 +1,4 @@
-import styled from "styled-components"
+import styled, {keyframes , css} from 'styled-components';
 import { useState, useEffect } from "react";
 import CardContainer from "../components/CardContainer";
 import ResetBtn from "../components/ResetBtn";
@@ -21,6 +21,7 @@ const CardGame = () => {
   const [nowLevel, setNowLevel] = useState("EASY")
 
   const [score, setScore] = useState(0);
+  const [animateScore, setAnimateScore] = useState(false);
 
   const [modalOn, setModalOn] = useState(false);
 
@@ -32,11 +33,9 @@ const CardGame = () => {
 
   useEffect(() => {
     if (score === cardsNum.length/2) {
-      console.log("matched!")
-      setModalOn(true); //이거 바로 안바뀌는 거 수정 => modal 도 바로 안열림
-      console.log(modalOn)
+      setModalOn(true);
     }
-  }, [score,setModalOn]);
+  }, [score,setModalOn,modalOn]);
 
 
 // 레벨 버튼 클릭 시 카드 수 변경
@@ -65,6 +64,7 @@ const CardGame = () => {
     setDisabled(false);
   }
 
+
   //선택된 카드들 비교해서 같으면 matched 값 부여
   useEffect(() => {
     if (firstCard && secondCard) {
@@ -88,13 +88,20 @@ const CardGame = () => {
     }
   }, [firstCard, secondCard]);
 
+// 점수 애니메이션
+  useEffect(() => {
+    setAnimateScore(true);
+    const timeoutId = setTimeout(() => setAnimateScore(false), 500);
+    return () => clearTimeout(timeoutId);
+  }, [score]);
+
   return (
     <>
     <Modal modalOn={modalOn} setModalOn={setModalOn} />
     <ResetBtn />
     <StHeader>
         <p> Match the MARIO! 🍄 </p>
-        <StScore> {score}/{cardsNum.length/2} </StScore>
+        <StScore animate={animateScore} > {score}/{cardsNum.length/2} </StScore>
     </StHeader>
     <StGameContainer>
       <StLevenContainer>
@@ -171,10 +178,25 @@ const StLevelBtn = styled.button`
     }
 `
 
+
+const blinkScore = keyframes`
+0% {
+  opacity: 1;
+}
+50% {
+  opacity: 0;
+}
+100% {
+  opacity: 1;
+}
+`;
+
 const StScore = styled.div`
   color:${({theme}) => theme.color.green};
   font-size: 2.6rem; 
   text-align: center;
   font-weight: 600;
   margin-top: 1.5rem;
+  animation: ${({ animate }) => animate ? css`${blinkScore} 1s ` : 'none'};
+
 `
