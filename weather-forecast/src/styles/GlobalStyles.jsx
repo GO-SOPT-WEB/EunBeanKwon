@@ -1,6 +1,8 @@
 import { createGlobalStyle } from "styled-components";
+import reset from "styled-reset";
  
 const GlobalStyles = createGlobalStyle`
+    ${reset}
     a{
         text-decoration: none;
         color: inherit;
@@ -33,8 +35,7 @@ const GlobalStyles = createGlobalStyle`
     }
     body{
         line-height: 1;
-        font-family: 'Noto Sans KR', sans-serif;
-        background-color: #F6F9F0;
+        font-family: 'NanumSquareRoundOTF', sans-serif;
         margin-bottom: 100px;
     }
     ol, ul{
