@@ -9,6 +9,7 @@ const GlobalStyles = createGlobalStyle`
     }
     *{
         box-sizing: border-box;
+        font-family: 'NanumSquareRoundOTF', sans-serif;
     }
     html, body, div, span, h1, h2, h3, h4, h5, h6, p, 
     a, dl, dt, dd, ol, ul, li, form, label, table{
@@ -35,7 +36,6 @@ const GlobalStyles = createGlobalStyle`
     }
     body{
         line-height: 1;
-        font-family: 'NanumSquareRoundOTF', sans-serif;
         margin-bottom: 100px;
     }
     ol, ul{
