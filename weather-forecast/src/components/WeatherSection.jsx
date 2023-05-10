@@ -1,18 +1,16 @@
 /* eslint-disable no-unused-vars */
 import React from 'react'
 import { styled } from 'styled-components'
-import { WEATER_TYPE } from '../data/weatherImg'
+import { WEATHER_TYPE } from '../data/weatherImg'
 
 const WeatherSection = () => {
-
-    console.log(WEATER_TYPE[0].imgURL)
   return (
     <StContainer>
         <StMockCard>
             <StDayHeader>
                 <h3>05-10</h3>
             </StDayHeader>
-            <img src={WEATER_TYPE[0].imgURL} alt="" />
+            <img src={WEATHER_TYPE[0].imgURL} alt="" />
             <div>
                 <span> 온도 </span>
                 <p> 17.65 </p>
