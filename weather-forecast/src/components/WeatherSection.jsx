@@ -35,31 +35,31 @@ const WeatherSection = () => {
 
 export default WeatherSection
 
-const StContainer = styled.section `
+const St = {
+    Container : styled.section `
     display: flex;
     flex-flow: row wrap;
     width: 75vw;
     margin: 0 auto;
-`
+`,
 
-const StDayHeader = styled.header`
+DayHeader : styled.header`
     height: fit-content;
     font-size: 5rem;
     color: ${(props) => props.theme.backgroundColor};
-`
+`,
 
-
-const StMockCard = styled.article `
+ MockCard : styled.article `
     display: flex;
     flex-flow: row wrap;
     justify-content: center;
     align-items: center;
-    margin: 1rem;
     width: 24rem;
     height: 40rem;
     border-radius: 1rem;
     background-color: ${(props) => props.theme.muteGreen};
     padding: 2rem 1rem;
+    margin: 1rem;
     > img {
         /* width: 17rem; */
         height: 17rem;
@@ -79,4 +79,5 @@ const StMockCard = styled.article `
             text-align: end;
         }
     }
-`
+`,
+};
