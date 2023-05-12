@@ -6,22 +6,39 @@ import { styled } from 'styled-components';
 const SearchingBar = () => {
   const navigate = useNavigate();
   const [area, setArea] = useState("Suwon")
+  const [dayWeek, setDayWeek] = useState("day");
+
+  const handleSelectChange = (e) => {
+    setDayWeek(e.target.value);
+    console.log(dayWeek)
+  }
+
+  const handleSubmit= (e) => {
+    console.log(dayWeek)
+    e.preventDefault();
+    if( dayWeek === "day") {
+      setDayWeek("day")
+    } else  {
+      setDayWeek("week")
+    }
+  }
+
   const handleChange = (e) => {
     setArea(e.target.value);
   }
 
   const submitArea = () => {
-    navigate(`/day/${area}`);
+    navigate(`/${dayWeek}/${area}`);
   };
 
   useEffect(() => {
-    setArea
-  }, [ area])
+    setDayWeek, setArea
+  }, [dayWeek, area])
 
   return (
     <>
-    <St.Form>
-        <St.SelectBox> 
+    <St.Form onSubmit={handleSubmit}>
+        <St.SelectBox value={dayWeek} onChange={handleSelectChange}> 
           <St.SelectBoxOptions value="day"> 오늘 </St.SelectBoxOptions>
           <St.SelectBoxOptions value="week"> 주간 </St.SelectBoxOptions>
         </St.SelectBox>
