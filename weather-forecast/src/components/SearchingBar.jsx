@@ -38,16 +38,16 @@ const SearchingBar = () => {
   return (
     <>
     <St.Form onSubmit={handleSubmit}>
-        <St.SelectBox value={dayWeek} onChange={handleSelectChange}> 
-          <St.SelectBoxOptions value="day"> 오늘 </St.SelectBoxOptions>
-          <St.SelectBoxOptions value="week"> 주간 </St.SelectBoxOptions>
-        </St.SelectBox>
-        <St.InputBox 
-          type="search" 
+        <select value={dayWeek} onChange={handleSelectChange}> 
+          <option value="day"> 오늘 </option>
+          <option value="week"> 주간 </option>
+        </select>
+        <input 
+          type="search"
           placeholder="영어 도시명 ex)suwon"
           onChange={handleChange}>
-        </St.InputBox>
-        <St.SearchBtn type="submit" onClick={()=>submitArea()}> 날씨 검색 </St.SearchBtn>
+        </input>
+        <button type="submit" onClick={()=>submitArea()}> 날씨 검색 </button>
     </St.Form>
     </>
   )
@@ -65,21 +65,14 @@ const St = {
   padding: 1rem;
   background-color: ${(props)=>props.theme.beige};
 
-  
-`,
+  > select {
+    margin: 0rem 1rem;
+    border-radius: 0.4rem;
+    font-size: 2rem;
+    height: 3rem;
+  }
 
-  SelectBox : styled.select`
-  margin: 0rem 1rem;
-  border-radius: 0.4rem;
-  font-size: 2rem;
-  height: 3rem;
-`,
-
-  SelectBoxOptions : styled.option`
-  
-` ,
-
-  InputBox : styled.input`
+  > input {
     border: none;
     height: 5rem;
     width: 26rem;
@@ -90,13 +83,14 @@ const St = {
       color: #999;
       font-style: italic;
     }
-` ,
-  SearchBtn : styled.button`
+  }
+  > button {
+
     background-color: ${(props)=>props.theme.muteGreen};
     margin-left: 1rem;
     height: 5.2rem;
     border-radius: 1rem;
     color: ${(props)=>props.theme.backgroundColor};
     font-size: 2rem;
-`,
-  };
+  }
+  `};
