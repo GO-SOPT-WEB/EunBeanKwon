@@ -3,7 +3,8 @@ const theme = {
     beige:"#FAEDCD",
     darkBeige:"#D4A373",
     muteGreen:"#CCD5AE",
-    lightGreen:"#E9EDC9"
+    lightGreen:"#E9EDC9",
+    lightgrey:"#F0F3F5",
   };
    
   export default theme;

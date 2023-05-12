@@ -10,15 +10,14 @@ const SearchingBar = () => {
 
   const handleSelectChange = (e) => {
     setDayWeek(e.target.value);
-    console.log(dayWeek)
+    navigate(`/${e.target.value}`);
   }
 
   const handleSubmit= (e) => {
-    console.log(dayWeek)
     e.preventDefault();
     if( dayWeek === "day") {
       setDayWeek("day")
-    } else  {
+    } else {
       setDayWeek("week")
     }
   }
@@ -32,16 +31,16 @@ const SearchingBar = () => {
   };
 
   useEffect(() => {
-    setDayWeek, setArea
-    console.log(area)
-  }, [navigate])
+    console.log(dayWeek)
+    handleSelectChange;
+  }, [dayWeek])
 
   return (
     <>
-    <St.Form onSubmit={handleSubmit}>
-        <select value={dayWeek} onChange={handleSelectChange}> 
+    <St.Form onSubmit={(e)=>handleSubmit(e)}>
+        <select value={dayWeek} onChange={(e)=>handleSelectChange(e)}> 
           <option value="day"> 오늘 </option>
-          <option value="week"> 주간 </option>
+          <option value="week"> 이번주 </option>
         </select>
         <input 
           type="text"
@@ -58,7 +57,7 @@ const SearchingBar = () => {
 export default SearchingBar;
 
 const St = {
-  
+
   Form : styled.form`
   width: 100%;
   height: 100%;
