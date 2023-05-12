@@ -5,17 +5,21 @@ import { styled } from 'styled-components'
 const Header = () => {
   return (
     <>
-        <StHeader> 비니의 일기예보 ☔️ </StHeader>
+        <St.Header> 비니의 일기예보 ☔️ </St.Header>
     </>
   )
 }
 
 export default Header
 
-const StHeader = styled.header`
+const St = {
+  Header : styled.header`
+    width: 100%;
+    height: 100%;
     font-size: 4rem;
     font-weight: 600;
     padding: 3rem 2rem;
     background-color: ${(props) => props.theme.darkBeige};
     color: ${(props) => props.theme.backgroundColor};
-`
+`,
+};
