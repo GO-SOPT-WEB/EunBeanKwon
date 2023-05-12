@@ -22,6 +22,48 @@ const WeekSection = () => {
       clouds: 0.0,
     }]);
 
+const getWeekWeather = () => {
+  let WeatherData = []; 
+  axios
+    .get(`https://api.openweathermap.org/data/2.5/forecast?q=${area}&appid=${import.meta.env.VITE_APP_WEATHER}&units=metric
+    `)
+    .then((res) => res.data)
+    .then((data)=> {
+        if(data.cod == 200) {
+          data.list
+          .filter((item, idx) => [2, 10, 18, 26, 34].includes(idx))
+          .map((data, idx) => {
+            //   날짜 세팅
+            //UTC와 대한민국 표준 시간 차 초단위로 빼기 (9 * 60 * 60)
+            const date = new Date((data.dt - 9 * 60 * 60) * 1000);
+            const month = date.getMonth()+1;
+            const day = date.getDate();
+            const dateString = `${month}월 ${day}일`;
+            WeatherData.push({
+              id: idx,
+              date: dateString,
+              weather_description: data.weather[0].description,
+              weather_img_url: WEATHER_TYPE.filter(
+                (weather) => weather.description === data.weather[0].description
+              )[0].imgURL,
+              temp: data.main.temp,
+              feels_like: data.main.feels_like,
+              temp_min: data.main.temp_min,
+              temp_max: data.main.temp_max,
+              clouds: data.clouds.all,
+
+            });
+          });
+          setWeekWeather(WeatherData);
+        }
+      })
+}
+
+
+useEffect(() => {
+  getWeekWeather();
+}, [area])
+
   return (
     <>
       {weekWeather.map((data, idx) => (
