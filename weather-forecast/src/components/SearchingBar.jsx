@@ -6,7 +6,7 @@ import { styled } from 'styled-components';
 const SearchingBar = () => {
   const navigate = useNavigate();
   const [area, setArea] = useState("")
-  const [dayWeek, setDayWeek] = useState("day");
+  const [dayWeek, setDayWeek] = useState("");
 
   const handleSelectChange = (e) => {
     setDayWeek(e.target.value);
@@ -15,11 +15,7 @@ const SearchingBar = () => {
 
   const handleSubmit= (e) => {
     e.preventDefault();
-    if( dayWeek === "day") {
-      setDayWeek("day")
-    } else {
-      setDayWeek("week")
-    }
+    submitArea();
   }
 
   const handleChange = (e) => {
@@ -59,35 +55,30 @@ export default SearchingBar;
 const St = {
 
   Form : styled.form`
+  display: flex;
   width: 100%;
   height: 100%;
-  display: flex;
   justify-content: center;
   align-items: center;
   padding: 1rem;
   background-color: ${(props)=>props.theme.beige};
 
   > select {
+    width: 9rem;
+    height: 3rem;
     margin: 0rem 1rem;
     text-align: center;
-    width: 6rem;
     border: 0.2rem solid ${(props)=>props.theme.muteGreen};
     border-radius: 0.5rem; 
     font-size: 2rem;
-    height: 3rem;
   }
 
   > input {
-    border: none;
-    height: 5rem;
     width: 26rem;
+    height: 5rem;
+    border: none;
     border-radius: 1rem;
     background-color: ${(props)=>props.theme.lightGreen};
-
-    &::value {
-      text-align: center;
-      font-size: 1.8rem;
-    }
 
     &::placeholder { // 앞에 & 꼭...
     text-align: center;
@@ -100,12 +91,10 @@ const St = {
   } 
 
   > button {
-
+    height: 5.2rem;
     background-color: ${(props)=>props.theme.muteGreen};
     margin-left: 1rem;
-    height: 5.2rem;
     border-radius: 1rem;
     color: ${(props)=>props.theme.backgroundColor};
     font-size: 2rem;
-  }
   `};

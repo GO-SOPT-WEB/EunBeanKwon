@@ -120,16 +120,16 @@ export default WeekSection
 
 const St = {
    MockCard : styled.article `
-      display: flex;
-      flex-flow: column wrap;
-      justify-content: space-around;
-      align-items: center;
-      width: 24rem;
-      height: 40rem;
-      border-radius: 1rem;
-      background-color: ${(props) => props.theme.muteGreen};
-      padding: 2rem 1rem;
-      margin: 1rem;
+   display: flex;
+   width: 24rem;
+   height: 40rem;
+   margin: 1rem;
+   flex-flow: column wrap;
+   justify-content: space-around;
+   align-items: center;
+   border-radius: 1rem;
+   background-color: ${(props) => props.theme.muteGreen};
+   padding: 2rem 1rem;
       > h3 {
         height: fit-content;
         font-size: 4rem;
@@ -142,8 +142,8 @@ const St = {
       }
       > div {
           display: flex;
-          justify-content: space-between;
           width: 17rem;
+          justify-content: space-between;
           font-size: 2.3rem;
           font-weight: 600;
           >span {
@@ -174,13 +174,13 @@ const St = {
     }
 
     .skeleton-title::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    animation: skeleton-gradient 1.5s infinite ease-in-out;
+        width: 100%;
+        height: 100%;
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        animation: skeleton-gradient 1.5s infinite ease-in-out;
   }
 
 
@@ -193,32 +193,32 @@ const St = {
       position: relative;
     }
 
-    .skeleton-img::before {
-      content: '';
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      animation: skeleton-gradient 1.5s infinite ease-in-out;
+        .skeleton-img::before {
+        width: 100%;
+        height: 100%;
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        animation: skeleton-gradient 1.5s infinite ease-in-out;
     }
 
     .skeleton-div {
-      width: 14rem;
-      height: 14rem;
-      background: ${(props) => props.theme.lightgrey};
-      overflow: hidden;
-      position: relative;
+          width: 14rem;
+          height: 14rem;
+          background: ${(props) => props.theme.lightgrey};
+          overflow: hidden;
+          position: relative;
     }
 
     .skeleton-div::before {
-      content: '';
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      animation: skeleton-gradient 1.5s infinite ease-in-out;
+        width: 100%;
+        height: 100%;
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        animation: skeleton-gradient 1.5s infinite ease-in-out;
     }   
       `,
 };

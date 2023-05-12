@@ -17,10 +17,12 @@ export default WeekList
 
 const St = {
   Container : styled.section `
-  display: flex;
-  flex-flow: row wrap;
-  justify-content: center;
-  width: 75vw;
-  margin: 0 auto;
+    display: flex;
+
+    width: 75vw;
+    margin: 0 auto;
+    
+    flex-flow: row wrap;
+    justify-content: center;
 `,
 }
