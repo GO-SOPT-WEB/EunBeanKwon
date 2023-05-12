@@ -17,6 +17,36 @@ const DaySection = () => {
       temp_max: 0.0,
       clouds: 0.0,
     });
+    
+  const getDayWeather = () => {
+  // 일간 데이터
+    axios
+        .get(`https://api.openweathermap.org/data/2.5/weather?q=${area}&appid=${import.meta.env.VITE_APP_WEATHER}&units=metric`)
+        .then((res) => res.data)
+        .then((data)=> {
+            if(data.cod == 200) {
+                console.log(data)
+                setDayWeather(
+                          {
+                            id: 0,
+                            name: data.name,
+                            weather_description: data.weather[0].description,
+                            weather_img_url: WEATHER_TYPE.filter(
+                              (weather) => weather.description === data.weather[0].description
+                            )[0].imgURL,
+                            temp: data.main.temp,
+                            feels_like: data.main.feels_like,
+                            temp_min: data.main.temp_min,
+                            temp_max: data.main.temp_max,
+                            clouds: data.clouds.all,
+                          })
+                }
+            })
+        }
+
+    useEffect(() => {
+      getDayWeather();
+    }, [area])
 
     if(dayWeather) {
         console.log(dayWeather)
