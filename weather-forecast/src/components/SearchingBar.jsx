@@ -5,7 +5,7 @@ import { styled } from 'styled-components';
 
 const SearchingBar = () => {
   const navigate = useNavigate();
-  const [area, setArea] = useState("Suwon")
+  const [area, setArea] = useState("")
   const [dayWeek, setDayWeek] = useState("day");
 
   const handleSelectChange = (e) => {
@@ -33,7 +33,8 @@ const SearchingBar = () => {
 
   useEffect(() => {
     setDayWeek, setArea
-  }, [dayWeek, area])
+    console.log(area)
+  }, [navigate])
 
   return (
     <>
@@ -43,7 +44,8 @@ const SearchingBar = () => {
           <option value="week"> 주간 </option>
         </select>
         <input 
-          type="search"
+          type="text"
+          value={area}
           placeholder="영어 도시명 ex)suwon"
           onChange={handleChange}>
         </input>
@@ -67,7 +69,10 @@ const St = {
 
   > select {
     margin: 0rem 1rem;
-    border-radius: 0.4rem;
+    text-align: center;
+    width: 6rem;
+    border: 0.2rem solid ${(props)=>props.theme.muteGreen};
+    border-radius: 0.5rem; 
     font-size: 2rem;
     height: 3rem;
   }
@@ -79,11 +84,21 @@ const St = {
     border-radius: 1rem;
     background-color: ${(props)=>props.theme.lightGreen};
 
-    ::placeholder { // 왜 안돼
-      color: #999;
-      font-style: italic;
+    &::value {
+      text-align: center;
+      font-size: 1.8rem;
     }
-  }
+
+    &::placeholder { // 앞에 & 꼭...
+    text-align: center;
+    font-size: 1.8rem;
+    }
+  
+    &:focus {
+      outline: none;
+    }
+  } 
+
   > button {
 
     background-color: ${(props)=>props.theme.muteGreen};
