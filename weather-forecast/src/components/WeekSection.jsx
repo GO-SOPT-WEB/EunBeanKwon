@@ -31,6 +31,7 @@ const getWeekWeather = () => {
     .then((data)=> {
         if(data.cod == 200) {
           data.list
+          // 5일 간의 오후 3시 날씨
           .filter((item, idx) => [2, 10, 18, 26, 34].includes(idx))
           .map((data, idx) => {
             //   날짜 세팅
@@ -68,10 +69,7 @@ useEffect(() => {
     <>
       {weekWeather.map((data, idx) => (
         <St.MockCard key={idx}>
-          <St.DayHeader>
-              <h3>{data.date}</h3>
-          </St.DayHeader>
-
+          <h3>{data.date}</h3>
           <img src={data.weather_img_url} alt={data.weather_description} />
           <div>
               <span> 온도 </span>
@@ -99,12 +97,6 @@ export default WeekSection
 
 
 const St = {
-
-  DayHeader : styled.header`
-      height: fit-content;
-      font-size: 5rem;
-      color: ${(props) => props.theme.backgroundColor};
-  `,
   
    MockCard : styled.article `
       display: flex;
@@ -117,6 +109,11 @@ const St = {
       background-color: ${(props) => props.theme.muteGreen};
       padding: 2rem 1rem;
       margin: 1rem;
+      > h3 {
+        height: fit-content;
+        font-size: 4rem;
+        color: ${(props) => props.theme.backgroundColor};
+      }
       > img {
           /* width: 17rem; */
           height: 17rem;
