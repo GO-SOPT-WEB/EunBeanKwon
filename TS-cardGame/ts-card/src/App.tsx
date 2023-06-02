@@ -3,13 +3,16 @@ import reset from "styled-reset";
 
 const App = () => {
   return (
-    <div>
-      
-    </div>
+    <>
+    <ThemeProvider theme={theme}>
+    <GlobalStyle />
+    <CardGame />
+    </ThemeProvider>
+    </>
   )
 }
 
-const GlobalStyle = cr`
+const GlobalStyle = createGlobalStyle`
   ${reset}
 
   @font-face {
