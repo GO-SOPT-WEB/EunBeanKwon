@@ -1,5 +1,10 @@
 import { ThemeProvider, createGlobalStyle } from 'styled-components'
 import reset from "styled-reset";
+import GmarketSansBold from './assets/fonts/GmarketSansBold.ttf'
+import GmarketSansMedium from './assets/fonts/GmarketSansMedium.ttf'
+import GmarketSansLight from './assets/fonts/GmarketSansLight.ttf'
+import CardGame from './pages/CardGame';
+import theme from './styles/theme';
 
 const App = () => {
   return (
