@@ -1,6 +1,12 @@
 import { atom } from "recoil";
+import { EasyVersion } from "../utils/ShuffledCard";
 
-export const test = atom({
-  key: "test",
-  default: 0,
+export const modalOnData = atom({
+  key: "modalOnData",
+  default: false,
+});
+
+export const cardsNumData = atom({
+  key: "cardsNumData",
+  default: EasyVersion,
 });

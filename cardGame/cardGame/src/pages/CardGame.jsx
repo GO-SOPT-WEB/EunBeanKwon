@@ -7,26 +7,30 @@ import Modal from "../components/Modal";
 
 // 카드 데이터 가지고 오기
 import { EasyVersion, NormalVersion, HardVersion } from "../utils/ShuffledCard";
+import { useRecoilState, useSetRecoilState } from "recoil";
+import { cardsNumData, modalOnData } from "../recoil/atoms";
 
 const CardGame = () => {
-  const [cardsNum, setCardsNum] = useState("EasyVersion");
+  const setModalOn = useSetRecoilState(modalOnData);
+  const [cardsNum, setCardsNum] = useRecoilState(cardsNumData);
+
   const [nowLevel, setNowLevel] = useState("EASY");
 
   const [score, setScore] = useState(0);
   const [animateScore, setAnimateScore] = useState(false);
-
-  const [modalOn, setModalOn] = useState(false);
 
   const [firstCard, setFirstCard] = useState(null);
   const [secondCard, setSecondCard] = useState(null);
 
   const [disabled, setDisabled] = useState(false);
 
+  const cardMatchedAll = score === cardsNum.length / 2;
+
   useEffect(() => {
-    if (score === cardsNum.length / 2) {
+    if (cardMatchedAll) {
       setModalOn(true);
     }
-  }, [score, setModalOn, modalOn]);
+  }, [cardMatchedAll, setModalOn]);
 
   // 레벨 버튼 클릭 시 카드 수 변경
   const ClickedLv = (e) => {
@@ -75,7 +79,7 @@ const CardGame = () => {
         setTimeout(() => resetTurn(), 500);
       }
     }
-  }, [firstCard, secondCard]);
+  }, [firstCard, score, secondCard]);
 
   // 점수 애니메이션
   useEffect(() => {
@@ -86,13 +90,12 @@ const CardGame = () => {
 
   return (
     <>
-      <Modal modalOn={modalOn} setModalOn={setModalOn} />
+      <Modal />
       <ResetBtn />
       <StHeader>
         <p> Match the MARIO! 🍄 </p>
         <StScore animate={animateScore}>
-          {" "}
-          {score}/{cardsNum.length / 2}{" "}
+          {score}/{cardsNum.length / 2}
         </StScore>
       </StHeader>
       <StGameContainer>
