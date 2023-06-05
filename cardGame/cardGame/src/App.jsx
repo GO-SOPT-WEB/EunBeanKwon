@@ -6,16 +6,19 @@ import GmarketSansBold from './assets/fonts/GmarketSansBold.ttf'
 import GmarketSansMedium from './assets/fonts/GmarketSansMedium.ttf'
 import GmarketSansLight from './assets/fonts/GmarketSansLight.ttf'
 import CardGame from './pages/CardGame'
+import {
+  RecoilRoot
+} from 'recoil';
 
 const App = () => {
 
   return (
-    <>
-    <ThemeProvider theme={theme}>
-    <GlobalStyle />
-    <CardGame />
-    </ThemeProvider>
-    </>
+    <RecoilRoot>
+      <ThemeProvider theme={theme}>
+        <GlobalStyle /> 
+        <CardGame />
+      </ThemeProvider>
+    </RecoilRoot>
   )
 }
 

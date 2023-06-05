@@ -18,14 +18,14 @@ const CardGame = () => {
 
 
   const [cardsNum, setCardsNum] = useState(EasyVersion)
-  const [nowLevel, setNowLevel] = useState("EASY")
+  const [nowLevel, setNowLevel] = useState<string>("EASY")
 
   const [score, setScore] = useState(0);
   const [animateScore, setAnimateScore] = useState(false);
 
   const [modalOn, setModalOn] = useState(false);
 
-  const [firstCard, setFirstCard] = useState(null);
+  const [firstCard, setFirstCard] = useState();
   const [secondCard, setSecondCard] = useState(null);
 
   const [disabled, setDisabled] = useState(false);
@@ -87,6 +87,7 @@ const CardGame = () => {
       }
     }
   }, [firstCard, secondCard]);
+
 
 // 점수 애니메이션
   useEffect(() => {
