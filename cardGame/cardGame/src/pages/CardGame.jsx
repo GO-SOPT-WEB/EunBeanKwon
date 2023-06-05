@@ -8,7 +8,7 @@ import Modal from "../components/Modal";
 // 카드 데이터 가지고 오기
 import { EasyVersion, NormalVersion, HardVersion } from "../utils/ShuffledCard";
 import { useRecoilState, useSetRecoilState } from "recoil";
-import { cardsNumData, modalOnData } from "../recoil/atoms";
+import { cardsNumData, modalOnData, scoreData } from "../recoil/atoms";
 
 const CardGame = () => {
   const setModalOn = useSetRecoilState(modalOnData);
@@ -16,7 +16,7 @@ const CardGame = () => {
 
   const [nowLevel, setNowLevel] = useState("EASY");
 
-  const [score, setScore] = useState(0);
+  const [score, setScore] = useSetRecoilState(scoreData);
   const [animateScore, setAnimateScore] = useState(false);
 
   const [firstCard, setFirstCard] = useState(null);
@@ -92,12 +92,6 @@ const CardGame = () => {
     <>
       <Modal />
       <ResetBtn />
-      <StHeader>
-        <p> Match the MARIO! 🍄 </p>
-        <StScore animate={animateScore}>
-          {score}/{cardsNum.length / 2}
-        </StScore>
-      </StHeader>
       <StGameContainer>
         <StLevenContainer>
           {Level.map((level) => {
@@ -127,20 +121,6 @@ const CardGame = () => {
 };
 
 export default CardGame;
-
-const StHeader = styled.header`
-  display: flex;
-  height: 20vh;
-  flex-direction: column;
-  justify-content: center;
-
-  > p {
-    color: ${({ theme }) => theme.color.red};
-    font-size: 3rem;
-    text-align: center;
-    font-weight: 600;
-  }
-`;
 
 const StGameContainer = styled.section`
   display: flex;
@@ -172,30 +152,4 @@ const StLevelBtn = styled.button`
     background-color: ${({ theme }) => theme.color.blue};
     box-shadow: 0.2rem 0.2rem ${({ theme }) => theme.color.yellow};
   }
-`;
-
-const blinkScore = keyframes`
-0% {
-  opacity: 1;
-}
-50% {
-  opacity: 0;
-}
-100% {
-  opacity: 1;
-}
-`;
-
-const StScore = styled.div`
-  color: ${({ theme }) => theme.color.green};
-  font-size: 2.6rem;
-  text-align: center;
-  font-weight: 600;
-  margin-top: 1.5rem;
-  animation: ${({ animate }) =>
-    animate
-      ? css`
-          ${blinkScore} 1s
-        `
-      : "none"};
 `;

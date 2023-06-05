@@ -10,3 +10,8 @@ export const cardsNumData = atom({
   key: "cardsNumData",
   default: EasyVersion,
 });
+
+export const scoreData = atom({
+  key: "scoreData",
+  default: 0,
+});
