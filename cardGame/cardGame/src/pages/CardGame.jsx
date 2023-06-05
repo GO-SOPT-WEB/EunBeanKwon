@@ -2,7 +2,6 @@ import styled from "styled-components";
 import { useState, useEffect } from "react";
 import CardContainer from "../components/CardContainer";
 import ResetBtn from "../components/ResetBtn";
-import { Level } from "../data/level";
 import Modal from "../components/Modal";
 
 // 카드 데이터 가지고 오기
@@ -32,20 +31,6 @@ const CardGame = () => {
       setModalOn(true);
     }
   }, [cardMatchedAll, setModalOn]);
-
-  // 레벨 버튼 클릭 시 카드 수 변경
-  const ClickedLv = (e) => {
-    setScore(0);
-    setNowLevel(e.target.value);
-    switch (e.target.value) {
-      case "EASY":
-        return setCardsNum(EasyVersion);
-      case "NORMAL":
-        return setCardsNum(NormalVersion);
-      case "HARD":
-        return setCardsNum(HardVersion);
-    }
-  };
 
   // 카드 클릭시 첫번째로 클릭한 카드, 두번째로 클릭한 카드 넣어주기
   const cardClicked = (card) => {
@@ -95,21 +80,6 @@ const CardGame = () => {
       <ResetBtn />
       <Header />
       <StGameContainer>
-        <StLevenContainer>
-          {Level.map((level) => {
-            return (
-              <StLevelBtn
-                key={level.id}
-                value={level.lv}
-                type="button"
-                className={"btn" + (level.lv == nowLevel ? " active" : "")}
-                onClick={ClickedLv}
-              >
-                {level.lv}
-              </StLevelBtn>
-            );
-          })}
-        </StLevenContainer>
         <CardContainer
           cardsNum={cardsNum}
           cardClicked={cardClicked}
@@ -133,25 +103,4 @@ const StGameContainer = styled.section`
   padding-top: 2.5rem;
 
   background-color: ${({ theme }) => theme.color.deepBlue};
-`;
-
-const StLevenContainer = styled.nav`
-  display: flex;
-  justify-content: center;
-`;
-
-const StLevelBtn = styled.button`
-  width: 5rem;
-  margin: 1rem 1rem;
-  background-color: ${({ theme }) => theme.color.yellow};
-  padding: 1rem 1rem;
-
-  text-align: center;
-  border-radius: 1rem;
-
-  box-shadow: 0.2rem 0.2rem ${({ theme }) => theme.color.blue};
-  &.active {
-    background-color: ${({ theme }) => theme.color.blue};
-    box-shadow: 0.2rem 0.2rem ${({ theme }) => theme.color.yellow};
-  }
 `;
