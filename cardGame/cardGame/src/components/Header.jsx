@@ -1,4 +1,3 @@
-import React from "react";
 import { useRecoilValue } from "recoil";
 import styled, { css, keyframes } from "styled-components";
 import { cardsNumData, scoreData } from "../recoil/atoms";
@@ -9,7 +8,7 @@ const Header = () => {
 
   <StHeader>
     <p> Match the MARIO! 🍄 </p>
-    <StScore animate={animateScore}>
+    <StScore>
       {score}/{cardsNum.length / 2}
     </StScore>
   </StHeader>;
