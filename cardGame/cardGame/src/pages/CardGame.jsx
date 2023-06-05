@@ -18,7 +18,7 @@ const CardGame = () => {
 
 
   const [cardsNum, setCardsNum] = useState(EasyVersion)
-  const [nowLevel, setNowLevel] = useState<string>("EASY")
+  const [nowLevel, setNowLevel] = useState("EASY")
 
   const [score, setScore] = useState(0);
   const [animateScore, setAnimateScore] = useState(false);
