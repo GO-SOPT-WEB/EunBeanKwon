@@ -9,6 +9,7 @@ import Modal from "../components/Modal";
 import { EasyVersion, NormalVersion, HardVersion } from "../utils/ShuffledCard";
 import { useRecoilState, useSetRecoilState } from "recoil";
 import { cardsNumData, modalOnData, scoreData } from "../recoil/atoms";
+import Header from "../components/Header";
 
 const CardGame = () => {
   const setModalOn = useSetRecoilState(modalOnData);
@@ -92,6 +93,7 @@ const CardGame = () => {
     <>
       <Modal />
       <ResetBtn />
+      <Header />
       <StGameContainer>
         <StLevenContainer>
           {Level.map((level) => {
