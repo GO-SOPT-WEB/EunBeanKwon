@@ -15,3 +15,8 @@ export const scoreData = atom({
   key: "scoreData",
   default: 0,
 });
+
+export const nowLevelData = atom({
+  key: "nowLevelData",
+  default: "EASY",
+});

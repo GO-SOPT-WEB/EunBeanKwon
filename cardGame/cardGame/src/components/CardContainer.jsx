@@ -1,13 +1,10 @@
 import styled from "styled-components";
 import SingleCard from "./SingleCard";
+import { useRecoilValue } from "recoil";
+import { cardsNumData } from "../recoil/atoms";
 
-const CardContainer = ({
-  cardsNum,
-  cardClicked,
-  firstCard,
-  secondCard,
-  disabled,
-}) => {
+const CardContainer = ({ firstCard, secondCard, disabled, cardClicked }) => {
+  const cardsNum = useRecoilValue(cardsNumData);
   return (
     <>
       <StCardContainer>

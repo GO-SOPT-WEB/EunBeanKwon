@@ -4,24 +4,21 @@ import CardContainer from "../components/CardContainer";
 import ResetBtn from "../components/ResetBtn";
 import Modal from "../components/Modal";
 
-// 카드 데이터 가지고 오기
-import { EasyVersion, NormalVersion, HardVersion } from "../utils/ShuffledCard";
 import { useRecoilState, useSetRecoilState } from "recoil";
 import { cardsNumData, modalOnData, scoreData } from "../recoil/atoms";
 import Header from "../components/Header";
+import LevelContainer from "../components/LevelContainer";
 
 const CardGame = () => {
   const setModalOn = useSetRecoilState(modalOnData);
   const [cardsNum, setCardsNum] = useRecoilState(cardsNumData);
 
-  const [nowLevel, setNowLevel] = useState("EASY");
-
   const [score, setScore] = useRecoilState(scoreData);
   const [animateScore, setAnimateScore] = useState(false);
 
+  // 1 drilling props
   const [firstCard, setFirstCard] = useState(null);
   const [secondCard, setSecondCard] = useState(null);
-
   const [disabled, setDisabled] = useState(false);
 
   const cardMatchedAll = score === cardsNum.length / 2;
@@ -65,7 +62,7 @@ const CardGame = () => {
         setTimeout(() => resetTurn(), 500);
       }
     }
-  }, [firstCard, score, secondCard]);
+  }, [firstCard, score, secondCard, setCardsNum, setScore]);
 
   // 점수 애니메이션
   useEffect(() => {
@@ -78,14 +75,14 @@ const CardGame = () => {
     <>
       <Modal />
       <ResetBtn />
-      <Header />
+      <Header animate={animateScore} />
       <StGameContainer>
+        <LevelContainer />
         <CardContainer
-          cardsNum={cardsNum}
-          cardClicked={cardClicked}
           firstCard={firstCard}
           secondCard={secondCard}
           disabled={disabled}
+          cardClicked={cardClicked}
         />
       </StGameContainer>
     </>

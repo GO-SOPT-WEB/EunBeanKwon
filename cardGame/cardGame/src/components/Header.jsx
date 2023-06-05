@@ -6,12 +6,14 @@ const Header = () => {
   const score = useRecoilValue(scoreData);
   const cardsNum = useRecoilValue(cardsNumData);
 
-  <StHeader>
-    <p> Match the MARIO! 🍄 </p>
-    <StScore>
-      {score}/{cardsNum.length / 2}
-    </StScore>
-  </StHeader>;
+  return (
+    <StHeader>
+      <p> Match the MARIO! 🍄 </p>
+      <StScore>
+        {score}/{cardsNum.length / 2}
+      </StScore>
+    </StHeader>
+  );
 };
 
 export default Header;
