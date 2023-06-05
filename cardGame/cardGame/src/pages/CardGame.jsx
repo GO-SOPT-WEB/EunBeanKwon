@@ -1,4 +1,4 @@
-import styled, { keyframes, css } from "styled-components";
+import styled from "styled-components";
 import { useState, useEffect } from "react";
 import CardContainer from "../components/CardContainer";
 import ResetBtn from "../components/ResetBtn";
@@ -16,7 +16,7 @@ const CardGame = () => {
 
   const [nowLevel, setNowLevel] = useState("EASY");
 
-  const [score, setScore] = useSetRecoilState(scoreData);
+  const [score, setScore] = useRecoilState(scoreData);
   const [animateScore, setAnimateScore] = useState(false);
 
   const [firstCard, setFirstCard] = useState(null);
