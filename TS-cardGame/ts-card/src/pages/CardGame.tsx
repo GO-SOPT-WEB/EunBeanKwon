@@ -1,11 +1,11 @@
-import styled from 'styled-components';
 import { useEffect } from 'react';
+import styled from 'styled-components';
+import { useRecoilState, useSetRecoilState } from 'recoil';
+import { cardsNumData, disabledData, firstCardData, modalOnData, scoreData, secondCardData } from '../recoil/atoms';
+
 import CardContainer from '../components/CardContainer';
 import ResetBtn from '../components/ResetBtn';
 import Modal from '../components/Modal';
-
-import { useRecoilState, useSetRecoilState } from 'recoil';
-import { cardsNumData, disabledData, firstCardData, modalOnData, scoreData, secondCardData } from '../recoil/atoms';
 import Header from '../components/Header';
 import LevelContainer from '../components/LevelContainer';
 
@@ -21,6 +21,8 @@ const CardGameJS = () => {
 
     // 전부 맞추면 축하 모달 띄우기
     useEffect(() => {
+        console.log('cardsNum', cardsNum);
+        console.log(typeof cardsNum);
         const cardMatchedAll = score === cardsNum.length / 2;
         if (cardMatchedAll) {
             setModalOn(true);
