@@ -9,9 +9,11 @@ const Header = () => {
   return (
     <StHeader>
       <p> Match the MARIO! 🍄 </p>
-      <StScore>
-        {score}/{cardsNum.length / 2}
-      </StScore>
+      {cardsNum && cardsNum.length > 0 && (
+        <StScore>
+          {score}/{cardsNum.length / 2}
+        </StScore>
+      )}
     </StHeader>
   );
 };

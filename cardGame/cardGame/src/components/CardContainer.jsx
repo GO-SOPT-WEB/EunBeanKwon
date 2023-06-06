@@ -8,19 +8,21 @@ const CardContainer = ({ firstCard, secondCard, disabled, cardClicked }) => {
   return (
     <>
       <StCardContainer>
-        {cardsNum.map((card) => {
-          return (
-            <SingleCard
-              key={card.id}
-              card={card}
-              cardClicked={cardClicked}
-              flipped={
-                card === firstCard || card === secondCard || card.matched
-              }
-              disabled={disabled}
-            />
-          );
-        })}
+        {cardsNum &&
+          Array.isArray(cardsNum) &&
+          cardsNum.map((card) => {
+            return (
+              <SingleCard
+                key={card.id}
+                card={card}
+                cardClicked={cardClicked}
+                flipped={
+                  card === firstCard || card === secondCard || card.matched
+                }
+                disabled={disabled}
+              />
+            );
+          })}
       </StCardContainer>
     </>
   );

@@ -20,3 +20,8 @@ export const nowLevelData = atom({
   key: "nowLevelData",
   default: "EASY",
 });
+
+export const firstCardData = atom({
+  key: "firstCardData",
+  default: null,
+});
