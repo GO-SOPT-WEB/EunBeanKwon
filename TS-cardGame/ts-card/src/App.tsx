@@ -5,6 +5,7 @@ import GmarketSansMedium from './assets/fonts/GmarketSansMedium.ttf';
 import GmarketSansLight from './assets/fonts/GmarketSansLight.ttf';
 import CardGame from './pages/CardGame';
 import theme from './styles/theme';
+import { RecoilRoot } from 'recoil';
 
 const App = () => {
     return (
