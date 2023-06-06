@@ -24,8 +24,6 @@ const SingleCard = ({ card }) => {
     }
   };
 
-  useEffect(() => {}, [card]);
-
   return (
     <>
       <OverlapCard className={flipped ? "flipped" : ""}>

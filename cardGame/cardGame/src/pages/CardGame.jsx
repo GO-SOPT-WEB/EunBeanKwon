@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { useState, useEffect } from "react";
+import { useEffect } from "react";
 import CardContainer from "../components/CardContainer";
 import ResetBtn from "../components/ResetBtn";
 import Modal from "../components/Modal";
@@ -18,11 +18,10 @@ import LevelContainer from "../components/LevelContainer";
 
 const CardGame = () => {
   const setModalOn = useSetRecoilState(modalOnData);
-  const [cardsNum, setCardsNum] = useRecoilState(cardsNumData);
 
+  const [cardsNum, setCardsNum] = useRecoilState(cardsNumData);
   const [score, setScore] = useRecoilState(scoreData);
 
-  // 1 drilling props
   const [firstCard, setFirstCard] = useRecoilState(firstCardData);
   const [secondCard, setSecondCard] = useRecoilState(secondCardData);
   const setDisabled = useSetRecoilState(disabledData);
@@ -41,10 +40,6 @@ const CardGame = () => {
     setSecondCard(null);
     setDisabled(false);
   };
-
-  useEffect(() => {
-    console.log(cardsNum);
-  }, [cardsNum]);
 
   const checkMatched = (prevCards) => {
     return prevCards.map((card) => {
