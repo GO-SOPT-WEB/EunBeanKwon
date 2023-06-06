@@ -1,6 +1,6 @@
 import { marioData, marioInfo } from '../data/mario';
 
-export const Shuffled = (arr: Array<marioInfo>) => arr.sort(() => Math.random() - 0.5);
+export const Shuffled = (arr: marioInfo[]) => arr.sort(() => Math.random() - 0.5);
 
 export let ShuffledMario = Shuffled(marioData);
 

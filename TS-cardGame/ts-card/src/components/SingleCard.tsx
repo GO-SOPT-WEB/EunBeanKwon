@@ -2,22 +2,26 @@ import styled from 'styled-components';
 import QuestionBox from '../assets/imgs/QuestionBox.png';
 import { useEffect } from 'react';
 import { useRecoilState, useRecoilValue } from 'recoil';
-import { disabledData, firstCardData, secondCardData } from '../recoil/atoms';
+import { CardInfo, disabledData, firstCardData, secondCardData } from '../recoil/atoms';
 
-const SingleCard = ({ card }) => {
+interface SingleCardProps {
+    card: CardInfo;
+}
+
+const SingleCard = ({ card }: SingleCardProps) => {
     const disabled = useRecoilValue(disabledData);
     const [firstCard, setFirstCard] = useRecoilState(firstCardData);
     const [secondCard, setSecondCard] = useRecoilState(secondCardData);
 
-    // 뒤집힌 상태 확인
+    // 카드 뒤집기
     const flipped = card === firstCard || card === secondCard || card.matched;
 
     // 카드 클릭시 첫번째로 클릭한 카드, 두번째로 클릭한 카드 넣어주기
-    const cardClicked = (card) => {
-        console.log(typeof firstCard);
-        console.log(firstCard);
+    const cardClicked = (card: CardInfo) => {
         firstCard ? setSecondCard(card) : setFirstCard(card);
     };
+
+    useEffect(() => {}, [cardClicked]);
 
     // 카드 클릭했을 때 클릭된 카드면 선택 불가 상태되게
     const handleClick = () => {

@@ -11,9 +11,7 @@ const CardContainer = () => {
             <StCardContainer>
                 {cardsNum &&
                     Array.isArray(cardsNum) &&
-                    cardsNum.map((card) => {
-                        return <SingleCard key={card.id} card={card} />;
-                    })}
+                    cardsNum.map((card) => <SingleCard key={card.id} card={card} />)}
             </StCardContainer>
         </>
     );

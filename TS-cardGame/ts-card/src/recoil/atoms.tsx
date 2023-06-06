@@ -1,7 +1,7 @@
 import { atom } from 'recoil';
 import { EasyVersion } from '../utils/ShuffledCard';
 
-interface cardProps {
+export interface CardInfo {
     alt: string;
     id: number;
     matched: boolean;
@@ -13,7 +13,7 @@ export const modalOnData = atom<boolean>({
     default: false,
 });
 
-export const cardsNumData = atom<cardProps[]>({
+export const cardsNumData = atom<CardInfo[]>({
     key: 'cardsNumData',
     default: EasyVersion,
 });
@@ -28,12 +28,12 @@ export const nowLevelData = atom<string>({
     default: 'EASY',
 });
 
-export const firstCardData = atom<cardProps | null>({
+export const firstCardData = atom<CardInfo | null>({
     key: 'firstCardData',
     default: null,
 });
 
-export const secondCardData = atom<cardProps | null>({
+export const secondCardData = atom<CardInfo | null>({
     key: 'secondCardData',
     default: null,
 });

@@ -1,7 +1,15 @@
 import { useEffect } from 'react';
 import styled from 'styled-components';
 import { useRecoilState, useSetRecoilState } from 'recoil';
-import { cardsNumData, disabledData, firstCardData, modalOnData, scoreData, secondCardData } from '../recoil/atoms';
+import {
+    cardProps,
+    cardsNumData,
+    disabledData,
+    firstCardData,
+    modalOnData,
+    scoreData,
+    secondCardData,
+} from '../recoil/atoms';
 
 import CardContainer from '../components/CardContainer';
 import ResetBtn from '../components/ResetBtn';
@@ -9,7 +17,7 @@ import Modal from '../components/Modal';
 import Header from '../components/Header';
 import LevelContainer from '../components/LevelContainer';
 
-const CardGameJS = () => {
+const CardGame = () => {
     const setModalOn = useSetRecoilState(modalOnData);
 
     const [cardsNum, setCardsNum] = useRecoilState(cardsNumData);
@@ -21,8 +29,6 @@ const CardGameJS = () => {
 
     // 전부 맞추면 축하 모달 띄우기
     useEffect(() => {
-        console.log('cardsNum', cardsNum);
-        console.log(typeof cardsNum);
         const cardMatchedAll = score === cardsNum.length / 2;
         if (cardMatchedAll) {
             setModalOn(true);
@@ -36,12 +42,14 @@ const CardGameJS = () => {
         setDisabled(false);
     };
 
-    const checkMatched = (prevCards) => {
-        return prevCards.map((card) => {
-            if (card.src === firstCard.src) {
-                return { ...card, matched: true };
-            } else {
-                return card;
+    const checkMatched = (prevCards: cardProps[]) => {
+        return prevCards.map((card: cardProps) => {
+            if (firstCard !== null) {
+                if (card.src === firstCard.src) {
+                    return { ...card, matched: true };
+                } else {
+                    return card;
+                }
             }
         });
     };
@@ -73,7 +81,7 @@ const CardGameJS = () => {
     );
 };
 
-export default CardGameJS;
+export default CardGame;
 
 const StGameContainer = styled.section`
     display: flex;
