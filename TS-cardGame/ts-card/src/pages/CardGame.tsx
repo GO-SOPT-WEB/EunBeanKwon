@@ -27,14 +27,6 @@ const CardGame = () => {
     const [secondCard, setSecondCard] = useRecoilState(secondCardData);
     const setDisabled = useSetRecoilState(disabledData);
 
-    // 전부 맞추면 축하 모달 띄우기
-    useEffect(() => {
-        const cardMatchedAll = score === cardsNum.length / 2;
-        if (cardMatchedAll) {
-            setModalOn(true);
-        }
-    }, []);
-
     // 클릭된 카드들 점부 초기화
     const resetTurn = () => {
         setFirstCard(null);
@@ -69,6 +61,14 @@ const CardGame = () => {
             }
         }
     }, [firstCard, secondCard, cardsNum, score]);
+
+    // 전부 맞추면 축하 모달 띄우기
+    useEffect(() => {
+        const cardMatchedAll = score === cardsNum.length / 2;
+        if (cardMatchedAll) {
+            setModalOn(true);
+        }
+    }, [score]);
 
     return (
         <>
