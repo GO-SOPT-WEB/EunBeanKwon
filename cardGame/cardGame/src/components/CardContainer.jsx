@@ -3,25 +3,16 @@ import SingleCard from "./SingleCard";
 import { useRecoilValue } from "recoil";
 import { cardsNumData } from "../recoil/atoms";
 
-const CardContainer = ({ firstCard, secondCard, disabled, cardClicked }) => {
+const CardContainer = () => {
   const cardsNum = useRecoilValue(cardsNumData);
+
   return (
     <>
       <StCardContainer>
         {cardsNum &&
           Array.isArray(cardsNum) &&
           cardsNum.map((card) => {
-            return (
-              <SingleCard
-                key={card.id}
-                card={card}
-                cardClicked={cardClicked}
-                flipped={
-                  card === firstCard || card === secondCard || card.matched
-                }
-                disabled={disabled}
-              />
-            );
+            return <SingleCard key={card.id} card={card} />;
           })}
       </StCardContainer>
     </>

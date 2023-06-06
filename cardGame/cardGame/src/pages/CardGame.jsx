@@ -5,7 +5,14 @@ import ResetBtn from "../components/ResetBtn";
 import Modal from "../components/Modal";
 
 import { useRecoilState, useSetRecoilState } from "recoil";
-import { cardsNumData, modalOnData, scoreData } from "../recoil/atoms";
+import {
+  cardsNumData,
+  disabledData,
+  firstCardData,
+  modalOnData,
+  scoreData,
+  secondCardData,
+} from "../recoil/atoms";
 import Header from "../components/Header";
 import LevelContainer from "../components/LevelContainer";
 
@@ -14,12 +21,11 @@ const CardGame = () => {
   const [cardsNum, setCardsNum] = useRecoilState(cardsNumData);
 
   const [score, setScore] = useRecoilState(scoreData);
-  const [animateScore, setAnimateScore] = useState(false);
 
   // 1 drilling props
-  const [firstCard, setFirstCard] = useState(null);
-  const [secondCard, setSecondCard] = useState(null);
-  const [disabled, setDisabled] = useState(false);
+  const [firstCard, setFirstCard] = useRecoilState(firstCardData);
+  const [secondCard, setSecondCard] = useRecoilState(secondCardData);
+  const setDisabled = useSetRecoilState(disabledData);
 
   // 전부 맞추면 축하 모달 띄우기
   useEffect(() => {
@@ -28,11 +34,6 @@ const CardGame = () => {
       setModalOn(true);
     }
   }, []);
-
-  // 카드 클릭시 첫번째로 클릭한 카드, 두번째로 클릭한 카드 넣어주기
-  const cardClicked = (card) => {
-    firstCard ? setSecondCard(card) : setFirstCard(card);
-  };
 
   // 클릭된 카드들 점부 초기화
   const resetTurn = () => {
@@ -69,13 +70,6 @@ const CardGame = () => {
     }
   }, [firstCard, secondCard]);
 
-  // 점수 애니메이션
-  useEffect(() => {
-    setAnimateScore(true);
-    const timeoutId = setTimeout(() => setAnimateScore(false), 500);
-    return () => clearTimeout(timeoutId);
-  }, [score]);
-
   return (
     <>
       <Modal />
@@ -83,12 +77,7 @@ const CardGame = () => {
       <Header />
       <StGameContainer>
         <LevelContainer />
-        <CardContainer
-          firstCard={firstCard}
-          secondCard={secondCard}
-          disabled={disabled}
-          cardClicked={cardClicked}
-        />
+        <CardContainer />
       </StGameContainer>
     </>
   );

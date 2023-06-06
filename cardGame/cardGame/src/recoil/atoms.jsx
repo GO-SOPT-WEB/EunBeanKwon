@@ -25,3 +25,13 @@ export const firstCardData = atom({
   key: "firstCardData",
   default: null,
 });
+
+export const secondCardData = atom({
+  key: "secondCardData",
+  default: null,
+});
+
+export const disabledData = atom({
+  key: "disabledData",
+  default: false,
+});

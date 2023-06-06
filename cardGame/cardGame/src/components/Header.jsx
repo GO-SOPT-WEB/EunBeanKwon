@@ -1,16 +1,27 @@
 import { useRecoilValue } from "recoil";
 import styled, { css, keyframes } from "styled-components";
 import { cardsNumData, scoreData } from "../recoil/atoms";
+import { useEffect } from "react";
+import { useState } from "react";
 
 const Header = () => {
   const score = useRecoilValue(scoreData);
   const cardsNum = useRecoilValue(cardsNumData);
 
+  const [animateScore, setAnimateScore] = useState(false);
+
+  // 점수 애니메이션
+  useEffect(() => {
+    setAnimateScore(true);
+    const timeoutId = setTimeout(() => setAnimateScore(false), 500);
+    return () => clearTimeout(timeoutId);
+  }, [score]);
+
   return (
     <StHeader>
       <p> Match the MARIO! 🍄 </p>
       {cardsNum && cardsNum.length > 0 && (
-        <StScore>
+        <StScore animate={animateScore}>
           {score}/{cardsNum.length / 2}
         </StScore>
       )}
