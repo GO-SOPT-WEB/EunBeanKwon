@@ -12,6 +12,7 @@
     "lint:fix": "eslint --fix 'src/**/*.{js,jsx,ts,tsx,json}'"
   },
   "dependencies": {
+    "@types/recoil": "^0.0.9",
     "@types/styled-components": "^5.1.26",
     "eslint-plugin-import": "^2.27.5",
     "eslint-plugin-jsx-a11y": "^6.7.1",
