@@ -36,7 +36,7 @@ const SingleCard = ({ card }: SingleCardProps) => {
                 <StFrontCard>
                     <div>
                         <p> {flipped} </p>
-                        <img src={card.src} alt={card.alt} id={card.id}></img>
+                        <img src={card.src} alt={card.alt}></img>
                     </div>
                 </StFrontCard>
                 <StBackCard>

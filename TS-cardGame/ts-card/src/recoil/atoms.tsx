@@ -3,7 +3,7 @@ import { EasyVersion } from '../utils/ShuffledCard';
 
 export interface CardInfo {
     alt: string;
-    id: number;
+    cardId: number;
     matched: boolean;
     src: string;
 }

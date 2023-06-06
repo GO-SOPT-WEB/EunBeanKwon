@@ -2,7 +2,7 @@ import { useEffect } from 'react';
 import styled from 'styled-components';
 import { useRecoilState, useSetRecoilState } from 'recoil';
 import {
-    cardProps,
+    CardInfo,
     cardsNumData,
     disabledData,
     firstCardData,
@@ -42,8 +42,8 @@ const CardGame = () => {
         setDisabled(false);
     };
 
-    const checkMatched = (prevCards: cardProps[]) => {
-        return prevCards.map((card: cardProps) => {
+    const checkMatched = (prevCards: CardInfo[]) => {
+        return prevCards.map((card: CardInfo) => {
             if (firstCard !== null) {
                 if (card.src === firstCard.src) {
                     return { ...card, matched: true };
