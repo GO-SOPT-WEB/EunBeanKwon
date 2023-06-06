@@ -4,28 +4,20 @@ import CardContainer from "../components/CardContainer";
 import ResetBtn from "../components/ResetBtn";
 import Modal from "../components/Modal";
 
-import { useRecoilState, useRecoilValue, useSetRecoilState } from "recoil";
-import {
-  cardsNumData,
-  firstCardData,
-  modalOnData,
-  scoreData,
-} from "../recoil/atoms";
+import { useRecoilState, useSetRecoilState } from "recoil";
+import { cardsNumData, modalOnData, scoreData } from "../recoil/atoms";
 import Header from "../components/Header";
 import LevelContainer from "../components/LevelContainer";
-// import { matchedState } from "../recoil/selectors";
 
 const CardGame = () => {
   const setModalOn = useSetRecoilState(modalOnData);
   const [cardsNum, setCardsNum] = useRecoilState(cardsNumData);
-  // const matchedSelector = useRecoilValue(matchedState);
 
   const [score, setScore] = useRecoilState(scoreData);
   const [animateScore, setAnimateScore] = useState(false);
 
   // 1 drilling props
   const [firstCard, setFirstCard] = useState(null);
-  // const [firstCard, setFirstCard] = useRecoilState(firstCardData);
   const [secondCard, setSecondCard] = useState(null);
   const [disabled, setDisabled] = useState(false);
 
