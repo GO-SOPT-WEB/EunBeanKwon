@@ -42,7 +42,7 @@ const CardGame = () => {
         setDisabled(false);
     };
 
-    const checkMatched = (prevCards: CardInfo[]) => {
+    const checkMatched = (prevCards: CardInfo[]): CardInfo[] => {
         return prevCards.map((card: CardInfo) => {
             if (firstCard !== null) {
                 if (card.src === firstCard.src) {
@@ -51,22 +51,24 @@ const CardGame = () => {
                     return card;
                 }
             }
+            return card; // 추가: undefined가 아닐 때의 기본 반환 값
         });
     };
 
-    //선택된 카드들 비교해서 같으면 matched 값 부여
+    // 선택된 카드들 비교해서 같으면 matched 값 부여
     useEffect(() => {
-        if (firstCard && secondCard) {
+        if (firstCard !== null && secondCard !== null) {
             setDisabled(true);
             if (firstCard.src === secondCard.src) {
-                setCardsNum(checkMatched);
+                const updatedCards = checkMatched(cardsNum); // 수정: checkMatched 호출
+                setCardsNum(updatedCards); // 수정: 반환된 배열을 전달
                 setScore(score + 1);
                 resetTurn();
             } else {
                 setTimeout(() => resetTurn(), 500);
             }
         }
-    }, [firstCard, secondCard]);
+    }, [firstCard, secondCard, cardsNum, score]);
 
     return (
         <>
