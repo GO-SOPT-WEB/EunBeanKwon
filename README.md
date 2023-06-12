@@ -5,6 +5,7 @@
 
 32기 YB 권은빈입니다 🫡
 
+
 insta: @e.3to3
 
 ### 🌼 과제를 하자 🎵
@@ -28,6 +29,5 @@ insta: @e.3to3
 <div align="center">
 
 ## 성장하고 싶고, 성장하고 있는 웨비 🌱 입니다 😎
-<img width="555" alt="스크린샷 2023-05-31 17 30 54" src="https://github.com/GO-SOPT-WEB/EunBeanKwon/assets/65286685/3748dc6a-5bc7-41dc-9fd3-a9f613979840">
-  
+<img width="550" alt="스크린샷 2023-06-12 17 08 10" src="https://github.com/GO-SOPT-WEB/EunBeanKwon/assets/65286685/5ca5b89e-0120-44c5-b8ce-0b57b64ddc83">  
 </div>
