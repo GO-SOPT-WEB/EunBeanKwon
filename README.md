@@ -21,7 +21,7 @@ insta: @e.3to3
 | 3주차 | 생각과제 |[[3주차 생각 과제 ] 리액트에서 상태관리가 필요한 이유 👀](https://github.com/GO-SOPT-WEB/EunBeanKwon/pull/7)|
 | 4주차 | 과제 |[[ 4주차 기본/심화 과제 ] 비니의 날씨 입니다](https://github.com/GO-SOPT-WEB/EunBeanKwon/pull/9)|
 | 4주차 | 생각과제 |[[ 4주차 생각 과제 ] React에서 Props Drilling을 해결하는 전략 🔃](https://github.com/GO-SOPT-WEB/EunBeanKwon/pull/8)|
-| 7주차 | 과제 |[[ 7주차 과제 ] 🌈 카드게임 리팩토링 ](https://github.com/GO-SOPT-WEB/EunBeanKwon/pull/10)|
+| 7주차 | 과제 |[[ 7주차 과제 ] 🌈 카드게임 리팩토링 : JS => TS ](https://github.com/GO-SOPT-WEB/EunBeanKwon/pull/10)|
 
   <br/> <br/> <br/>
 </div>
