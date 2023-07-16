@@ -14,6 +14,42 @@ body {
   font-family: "Nanum Gothic", sans-serif;
 }
 
+.modal-background {
+  display: none;
+  z-index: 100;
+  width: 100%;
+  height: 100%;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+.modal-background > form {
+  display: flex;
+  z-index: 100;
+  width: 15rem;
+  height: 10rem;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: #fff;
+  border-radius: 2rem;
+}
+
+.modal-submit {
+  width: 3rem;
+  margin-top: 1rem;
+  border-radius: 0.3rem;
+  background-color: #d4a373;
+  color: #fefae0;
+  font-weight: 500;
+  font-size: 1rem;
+  padding: 0.2rem;
+}
+
 .full-container {
   display: flex;
   height: auto;
@@ -42,14 +78,14 @@ body {
 
 .day {
   display: grid;
-  grid-template-rows: repeat(3, 1fr);
   height: 20vh;
   margin: 0.5rem 1rem;
+  grid-template-rows: repeat(3, 1fr);
   place-items: center center;
 }
 
 .calc__do-num-title {
-  z-index: 100;
+  z-index: 50;
   position: relative;
   color: #faedcd;
 }
@@ -73,7 +109,7 @@ body {
 
 .to-dos-container {
   display: flex;
-  height: 60vh;
+  height: 70vh;
   margin: 2rem;
   flex-direction: column;
   flex-wrap: wrap;
@@ -122,7 +158,10 @@ body {
   size: 2rem;
   font-weight: 600;
 }
-
+.to-do__list{
+  margin-top: 0.2rem;
+  margin-left: 0.2rem;
+}
 .to-do__list-container {
   display: flex;
   margin-bottom: 0.7rem;
@@ -134,13 +173,25 @@ body {
   overflow: hidden;
   text-overflow: ellipsis;
 }
-
-.to-do__list-container > button {
-  margin-right: 0.4rem;
+input[type=checkbox]{
+  display: none;
+}
+input[type=checkbox] + label {
+  display: block;
+  width: 24px;
+  height: 24px;
+  top:0rem;
+  background: url('./imgs/whiteHeart.png')left/22px no-repeat; 
+  transition: all 1s;;
 }
 
-.to-do__list-btn:focus {
-  filter: brightness(0);
+input[type=checkbox]:checked + label {
+  background-image: url('./imgs/heartDone.png'); 
+  transition: all 1s;
+}
+
+.to-do__list-container > input {
+  margin-right: 0.4rem;
 }
 
 .to-do__list-img {
