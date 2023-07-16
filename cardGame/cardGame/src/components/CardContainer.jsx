@@ -1,37 +1,31 @@
 import styled from "styled-components";
 import SingleCard from "./SingleCard";
+import { useRecoilValue } from "recoil";
+import { cardsNumData } from "../recoil/atoms";
 
-const CardContainer = ({cardsNum, cardClicked, firstCard, secondCard, disabled}) => {
+const CardContainer = () => {
+  const cardsNum = useRecoilValue(cardsNumData);
 
   return (
     <>
-    <StCardContainer>
-      {cardsNum.map((card) => {
-        return ( 
-          <SingleCard 
-            key={card.id}
-            card={card}
-            cardClicked={cardClicked}
-            flipped={card === firstCard || card === secondCard || card.matched }
-            disabled={disabled}
-          />
-        )
-      })}
-    </StCardContainer>
+      <StCardContainer>
+        {cardsNum &&
+          Array.isArray(cardsNum) &&
+          cardsNum.map((card) => {
+            return <SingleCard key={card.id} card={card} />;
+          })}
+      </StCardContainer>
     </>
-  )
-}
+  );
+};
 
 export default CardContainer;
 
-const StCardContainer = styled.div `
+const StCardContainer = styled.div`
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
 
-display: flex;
-flex-wrap: wrap;
-justify-content: center;
-
-flex-wrap: wrap;
-justify-content: center;
-`
-
-
+  flex-wrap: wrap;
+  justify-content: center;
+`;
